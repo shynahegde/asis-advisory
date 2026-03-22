@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Source+Sans+3:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #FFFFFF;
+  --foreground: #171717;
+  --primary: #1D4ED8;
+  --success: #16A34A;
+  --amber: #D97706;
+  --warm: #F8F7F5;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 18px;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: 'Source Sans 3', system-ui, sans-serif;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Lora', Georgia, serif;
+  line-height: 1.3;
+}
+
+/* Focus rings for accessibility */
+*:focus-visible {
+  outline: 3px solid #1D4ED8;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Minimum touch targets */
+button, a, input, select, textarea {
+  min-height: 52px;
+}
+
+button, a {
+  cursor: pointer;
+}
+
+/* Remove min-height for inline links */
+p a, span a {
+  min-height: unset;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .font-serif {
+    font-family: 'Lora', Georgia, serif;
+  }
+
+  .touch-target {
+    min-height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* Ticket status badges */
+.status-submitted { @apply bg-gray-100 text-gray-700; }
+.status-triaging { @apply bg-blue-100 text-blue-700; }
+.status-assigned { @apply bg-purple-100 text-purple-700; }
+.status-in_progress { @apply bg-amber-100 text-amber-700; }
+.status-resolved { @apply bg-green-100 text-green-700; }
+
+/* Job card urgency borders */
+.border-remote { border-left: 4px solid #DC2626; }
+.border-onsite { border-left: 4px solid #1D4ED8; }
+
+/* Skeleton loader animation */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.skeleton {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 4px;
+}

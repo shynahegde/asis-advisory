@@ -1166,6 +1166,190 @@
     .footer-email:hover { color: var(--accent); }
 
     /* ─────────────────────────────────────────
+       PROMISE STRIP
+    ───────────────────────────────────────── */
+    .promise-strip {
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      background: var(--surface);
+    }
+    .promise-items {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+    }
+    .promise-item {
+      padding: 42px 40px;
+      border-right: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .promise-item:last-child { border-right: none; }
+    .promise-stat {
+      font-family: var(--font-display);
+      font-weight: 300;
+      font-size: 2.25rem;
+      color: var(--accent);
+      letter-spacing: -0.02em;
+      line-height: 1;
+    }
+    .promise-desc {
+      font-size: 0.8125rem;
+      font-weight: 300;
+      color: var(--text-muted);
+      line-height: 1.68;
+      max-width: 280px;
+    }
+
+    /* ─────────────────────────────────────────
+       NO DEPENDENCY CALLOUT
+    ───────────────────────────────────────── */
+    .nodep-callout {
+      margin-top: 44px;
+      padding: 32px 36px;
+      border: 1px solid rgba(45,212,191,0.18);
+      border-left: 2px solid var(--accent);
+      border-radius: 0 3px 3px 0;
+      background: var(--accent-dim);
+    }
+    .nodep-headline {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 1.375rem;
+      font-weight: 300;
+      color: var(--text);
+      margin-bottom: 12px;
+      line-height: 1.35;
+      letter-spacing: -0.01em;
+    }
+    .nodep-body {
+      font-size: 0.875rem;
+      font-weight: 300;
+      color: var(--text-muted);
+      line-height: 1.78;
+      max-width: 700px;
+    }
+
+    /* ─────────────────────────────────────────
+       FAQ
+    ───────────────────────────────────────── */
+    .faq-header { max-width: 560px; margin-bottom: 52px; }
+    .faq-headline { font-size: clamp(2rem, 3.5vw, 2.75rem); }
+    .faq-list {
+      max-width: 800px;
+      border-top: 1px solid var(--border);
+    }
+    .faq-item { border-bottom: 1px solid var(--border); }
+    .faq-question {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 22px 0;
+      font-size: 0.9375rem;
+      font-weight: 400;
+      color: var(--text);
+      cursor: pointer;
+      user-select: none;
+      transition: color 0.2s;
+      list-style: none;
+    }
+    .faq-question:hover { color: var(--accent); }
+    .faq-icon {
+      width: 22px;
+      height: 22px;
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: border-color 0.25s, transform 0.3s;
+      color: var(--text-faint);
+    }
+    .faq-item.open .faq-icon {
+      border-color: var(--accent);
+      transform: rotate(45deg);
+      color: var(--accent);
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+    }
+    .faq-item.open .faq-answer { max-height: 500px; }
+    .faq-answer-inner {
+      padding-bottom: 24px;
+      font-size: 0.9375rem;
+      font-weight: 300;
+      color: var(--text-muted);
+      line-height: 1.8;
+    }
+
+    /* ─────────────────────────────────────────
+       ADVISORY BOARD
+    ───────────────────────────────────────── */
+    .advisory-header { max-width: 560px; margin-bottom: 60px; }
+    .advisory-headline { font-size: clamp(2rem, 3.5vw, 2.75rem); }
+    .advisory-note {
+      margin-top: 14px;
+      font-size: 0.9375rem;
+      font-weight: 300;
+      color: var(--text-muted);
+      line-height: 1.75;
+    }
+    .advisory-grid {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .advisory-card {
+      background: var(--bg);
+      padding: 28px 26px 32px;
+      transition: background 0.3s;
+    }
+    .advisory-card:hover { background: var(--surface); }
+    .advisory-initials {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border-hover);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 400;
+      color: var(--text-faint);
+      letter-spacing: 0.04em;
+      margin-bottom: 16px;
+    }
+    .advisory-name {
+      font-size: 0.8125rem;
+      font-weight: 400;
+      color: var(--text);
+      margin-bottom: 4px;
+      line-height: 1.4;
+    }
+    .advisory-role {
+      font-size: 0.75rem;
+      font-weight: 300;
+      color: var(--text-faint);
+      margin-bottom: 12px;
+      letter-spacing: 0.02em;
+    }
+    .advisory-bio {
+      font-size: 0.8125rem;
+      font-weight: 300;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    /* ─────────────────────────────────────────
        RESPONSIVE — 1024px
     ───────────────────────────────────────── */
     @media (max-width: 1024px) {
@@ -1241,11 +1425,25 @@
       .footer-inner { flex-direction: column; gap: 14px; text-align: center; }
       .footer-right { align-items: center; }
       .footer-tagline { display: none; }
+
+      .promise-items { grid-template-columns: 1fr; }
+      .promise-item { border-right: none; border-bottom: 1px solid var(--border); }
+      .promise-item:last-child { border-bottom: none; }
+
+      .faq-list { max-width: 100%; }
+
+      .advisory-grid { grid-template-columns: repeat(2,1fr); }
+      .advisory-card:nth-child(2) { border-right: none; }
+      .advisory-card:nth-child(1),
+      .advisory-card:nth-child(2) { border-bottom: 1px solid var(--border); }
     }
 
     @media (max-width: 480px) {
       .hero h1 { font-size: 2.125rem; }
       .form-checkbox-group { flex-direction: column; gap: 12px; }
+      .advisory-grid { grid-template-columns: 1fr; }
+      .advisory-card { border-right: none !important; border-bottom: 1px solid var(--border) !important; }
+      .advisory-card:last-child { border-bottom: none !important; }
     }
   </style>
 </head>
@@ -1263,6 +1461,7 @@
           <li><a href="#how">How We Work</a></li>
           <li><a href="#engagements">Engagements</a></li>
           <li><a href="#ventures">Ventures</a></li>
+          <li><a href="#faq">FAQ</a></li>
           <li><a href="#contact">Contact</a></li>
           <li><a href="mailto:hello@asisadvisory.com" class="btn-nav">Book a Readout</a></li>
         </ul>
@@ -1278,6 +1477,7 @@
     <a href="#how"          onclick="closeMenu()">How We Work</a>
     <a href="#engagements"  onclick="closeMenu()">Engagements</a>
     <a href="#ventures"     onclick="closeMenu()">Ventures</a>
+    <a href="#faq"          onclick="closeMenu()">FAQ</a>
     <a href="#contact"      onclick="closeMenu()">Contact</a>
     <a href="mailto:hello@asisadvisory.com" class="mob-cta">Book a Readout</a>
   </div>
@@ -1319,6 +1519,28 @@
       <div class="hero-scroll-line"></div>
     </div>
   </section>
+
+  <!-- ══════════════════════════════════════
+       PROMISE STRIP — time-to-first-value + key differentiators
+       TODO: Verify "30 days" commitment before publishing. Adjust if
+             the Diagnostic Sprint scope changes the realistic first-output date.
+  ══════════════════════════════════════ -->
+  <div class="promise-strip fade-up">
+    <div class="promise-items">
+      <div class="promise-item">
+        <span class="promise-stat">30 days</span>
+        <span class="promise-desc">to first deliverable — a readout of findings and ROI-quantified recommendations, before any further commitment is required.</span>
+      </div>
+      <div class="promise-item">
+        <span class="promise-stat">Fixed fee</span>
+        <span class="promise-desc">Every engagement is scoped, priced, and committed to in writing before we start. No open-ended retainers. No scope-creep surprises.</span>
+      </div>
+      <div class="promise-item">
+        <span class="promise-stat">You decide</span>
+        <span class="promise-desc">You see the readout before any further commitment is asked for. No bundled lock-in. If AI isn't the right fit yet, we'll tell you.</span>
+      </div>
+    </div>
+  </div>
 
   <!-- ══════════════════════════════════════
        PROBLEM
@@ -1514,6 +1736,11 @@
         </div>
       </div>
 
+      <div class="nodep-callout">
+        <div class="nodep-headline">"We work to make ourselves unnecessary."</div>
+        <p class="nodep-body">Every Asis engagement is designed to transfer capability to your team — not create consultant dependency. When we build your governance framework, your team runs it. When we stand up your AI intake process, your people own it. When we deploy your first AI workflows, your engineers maintain them. The explicit goal of every engagement is a client who doesn't need us to come back. We think that's the right way to do this work. We also think it's why clients do come back.</p>
+      </div>
+
     </div>
   </section>
 
@@ -1574,6 +1801,96 @@
             <li>Quarterly advisory cadence and executive briefing</li>
           </ul>
           <div class="tier-pricing">Custom fixed-fee — request a scoped quote</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       FAQ
+  ══════════════════════════════════════ -->
+  <section class="section fade-up" id="faq">
+    <div class="container">
+      <div class="faq-header">
+        <div class="section-label">Common Questions</div>
+        <h2 class="display-headline faq-headline">Addressed directly.</h2>
+      </div>
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <div class="faq-question" role="button" tabindex="0">
+            <span>How is Asis different from a Big Four or McKinsey engagement?</span>
+            <div class="faq-icon">
+              <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M5 1v8M1 5h8"/>
+              </svg>
+            </div>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Three things. First, we're fixed-fee — no open-ended retainers or scope creep. Second, the senior operators who write your strategy are the same people who help execute it. There's no handoff to a junior team after the deck is signed. Third, we're sized for speed: 30-day first deliverable, 90-day execution engagement. Big-firm timelines run 12–24 months and are designed around their staffing model, not your urgency. We work at the pace regulated enterprises actually need to move to stay ahead of the regulatory calendar.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" role="button" tabindex="0">
+            <span>What if the readout says AI isn't the right fit for us yet?</span>
+            <div class="faq-icon">
+              <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M5 1v8M1 5h8"/>
+              </svg>
+            </div>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">We tell you. That's the point of the readout. If the honest answer is "your data infrastructure isn't ready," or "you have three foundational problems to solve before AI will stick," we say that — and we document it clearly, with a prioritized plan for what to fix first. We'd rather spend 30 days telling you the truth than 90 days executing the wrong thing. Clients who hear hard news from us at readout consistently come back when they're ready, because they trust the assessment.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" role="button" tabindex="0">
+            <span>How do you handle data security and IP during an engagement?</span>
+            <div class="faq-icon">
+              <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M5 1v8M1 5h8"/>
+              </svg>
+            </div>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">We operate under mutual NDA and a clearly scoped data handling agreement from the start of every engagement. For healthcare clients, we operate under BAA as required by HIPAA. We don't use client data to train models, we don't retain sensitive materials after engagement close, and all work product created during the engagement belongs to the client. For highly sensitive environments, we also support air-gapped or on-premises working arrangements — we've done it in clinical settings before.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" role="button" tabindex="0">
+            <span>We already have AI vendors and tools in place. Do we still start with a Diagnostic Sprint?</span>
+            <div class="faq-icon">
+              <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M5 1v8M1 5h8"/>
+              </svg>
+            </div>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Yes — and the Diagnostic Sprint is often most valuable for organizations that already have AI in motion. The assessment tells you what's actually delivering value vs. what's consuming budget, identifies governance gaps created by rapid tool adoption, and gives you a prioritized view of what to scale, what to kill, and what to govern more tightly. If you're already running AI programs, the AI Health Check engagement may also be a fit — it's designed specifically for organizations that need an independent audit of an existing portfolio.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" role="button" tabindex="0">
+            <span>What happens after the 90-day engagement ends?</span>
+            <div class="faq-icon">
+              <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M5 1v8M1 5h8"/>
+              </svg>
+            </div>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Your team owns everything we built. The governance framework, the AI intake process, the vendor vetting scorecard, the roadmap — all of it transfers to your organization with documentation designed for internal operation. Most clients continue with a quarterly AI Health Check to keep the roadmap current and the governance framework calibrated as regulations and the market shift. Some engage us for a second 90-day sprint on the next priority. Either way, the decision is yours — we've designed the engagement to leave you self-sufficient, not dependent.
+            </div>
+          </div>
         </div>
 
       </div>
@@ -1832,6 +2149,57 @@
   </section>
 
   <!-- ══════════════════════════════════════
+       ADVISORY BOARD
+       PLACEHOLDER — replace all names, roles, and bios before launch.
+       These are illustrative profiles representing the caliber and
+       backgrounds the advisory board is being built toward.
+  ══════════════════════════════════════ -->
+  <section class="section section--surface fade-up" id="advisory">
+    <div class="container">
+      <div class="advisory-header">
+        <div class="section-label">Advisory Board</div>
+        <h2 class="display-headline advisory-headline">Senior operators across regulated enterprise.</h2>
+        <p class="advisory-note">Asis's advisory board brings board-level credibility across regulated healthcare, financial services, and enterprise AI — the industries where governance decisions carry the most consequence.</p>
+      </div>
+      <div class="advisory-grid">
+
+        <!-- PLACEHOLDER — replace with real advisor -->
+        <div class="advisory-card">
+          <div class="advisory-initials">—</div>
+          <div class="advisory-name">[Chief Digital Officer]</div>
+          <div class="advisory-role">Regional Health System</div>
+          <p class="advisory-bio">20+ years leading digital transformation and technology strategy at a major regional health system. Guided enterprise AI adoption through HIPAA compliance and clinical governance requirements.</p>
+        </div>
+
+        <!-- PLACEHOLDER — replace with real advisor -->
+        <div class="advisory-card">
+          <div class="advisory-initials">—</div>
+          <div class="advisory-name">[Chief Risk Officer]</div>
+          <div class="advisory-role">Fortune 500 Financial Services</div>
+          <p class="advisory-bio">Led model risk and AI governance programs at a top-10 financial institution. Deep experience in regulatory frameworks, audit-readiness, and building risk infrastructure for algorithmic decision-making at scale.</p>
+        </div>
+
+        <!-- PLACEHOLDER — replace with real advisor -->
+        <div class="advisory-card">
+          <div class="advisory-initials">—</div>
+          <div class="advisory-name">[Senior Policy Official]</div>
+          <div class="advisory-role">Former Federal Health Regulator</div>
+          <p class="advisory-bio">Former senior official at a federal health regulatory agency with direct experience shaping AI and digital health policy. Provides strategic guidance on regulatory trajectory and audit expectations for clinical AI.</p>
+        </div>
+
+        <!-- PLACEHOLDER — replace with real advisor -->
+        <div class="advisory-card">
+          <div class="advisory-initials">—</div>
+          <div class="advisory-name">[Founder & CEO]</div>
+          <div class="advisory-role">Enterprise AI Infrastructure</div>
+          <p class="advisory-bio">Founded and scaled an enterprise AI infrastructure company through Series B. Brings operator perspective on AI deployment realities, vendor landscape, and what governance infrastructure actually looks like in production environments.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
        CONTACT
        NOTE: Form submission is STUBBED — functional UI, no real backend.
        TODO: Connect to a real form backend before going live.
@@ -1980,8 +2348,22 @@
         staggerObs.unobserve(e.target);
       });
     }, { threshold: 0.12 });
-    document.querySelectorAll('.services-grid, .tiers-grid, .team-grid, .how-principles, .industries-inner')
+    document.querySelectorAll('.services-grid, .tiers-grid, .team-grid, .how-principles, .industries-inner, .advisory-grid')
       .forEach(el => staggerObs.observe(el));
+
+    /* ── FAQ accordion ───────────────────── */
+    document.querySelectorAll('.faq-item').forEach(item => {
+      const q = item.querySelector('.faq-question');
+      q.addEventListener('click', () => {
+        const isOpen = item.classList.contains('open');
+        // close all others
+        document.querySelectorAll('.faq-item.open').forEach(o => o.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+      q.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); q.click(); }
+      });
+    });
 
     /* ── Pitch form: char counter ────────── */
     const pitchText  = document.getElementById('pitchText');

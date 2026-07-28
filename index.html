@@ -1,2490 +1,513 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Asis Advisory — AI Strategy, Governance & Execution</title>
-  <meta name="description" content="Asis Advisory is a boutique AI advisory and venture firm. Fixed-fee engagements. ROI-quantified. We execute what we recommend, in regulated industries.">
-  <meta property="og:title" content="Asis Advisory — AI Strategy, Governance & Execution">
-  <meta property="og:description" content="Fixed-fee AI strategy, governance, and execution for regulated industries. We put our own delivery team behind every roadmap we write.">
-  <meta property="og:url" content="https://asisadvisory.com">
-  <meta property="og:type" content="website">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Asis Advisory — AI Transformation for Regulated Enterprises</title>
+<meta name="description" content="Asis Advisory is your end-to-end AI partner — governed, built, and scaled for healthcare, pharma, medical devices, and regulated industries.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+:root{
+  --navy:#0C1A32;
+  --navy2:#152746;
+  --ember:#C8602A;
+  --ember2:#D97B47;
+  --canvas:#F5F4F0;
+  --white:#FFFFFF;
+  --ink:#0C1A32;
+  --slate:#6E7E9B;
+  --slate2:#B0BAD0;
+  --sage:#2E7D63;
+  --gd:'Space Grotesk',sans-serif;
+  --bd:'Inter',sans-serif;
+  --r:4px;
+}
+body{font-family:var(--bd);color:var(--ink);background:var(--white);overflow-x:hidden;-webkit-font-smoothing:antialiased}
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Instrument+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:22px 64px;display:flex;align-items:center;justify-content:space-between;transition:background .3s,box-shadow .3s}
+nav.sc{background:rgba(12,26,50,.96);backdrop-filter:blur(16px);box-shadow:0 1px 0 rgba(255,255,255,.06)}
+.nl{font-family:var(--gd);font-size:19px;font-weight:700;color:#fff;letter-spacing:-.4px;text-decoration:none}
+.nl span{color:var(--ember)}
+.nlinks{display:flex;align-items:center;gap:36px}
+.nlinks a{font-family:var(--bd);font-size:14px;font-weight:500;color:rgba(255,255,255,.65);text-decoration:none;transition:color .2s}
+.nlinks a:hover{color:#fff}
+.ncta{background:var(--ember)!important;color:#fff!important;padding:10px 26px;border-radius:var(--r);font-weight:600!important;transition:background .2s!important}
+.ncta:hover{background:var(--ember2)!important}
 
-  <style>
-    /* ─────────────────────────────────────────
-       CUSTOM PROPERTIES
-    ───────────────────────────────────────── */
-    :root {
-      --bg:           #09090b;
-      --surface:      #111115;
-      --surface-2:    #16161c;
-      --border:       rgba(255,255,255,0.08);
-      --border-hover: rgba(255,255,255,0.16);
-      --accent:       #2dd4bf;
-      --accent-dim:   rgba(45,212,191,0.10);
-      --accent-glow:  rgba(45,212,191,0.18);
-      --text:         #f4f6f8;
-      --text-muted:   rgba(244,246,248,0.52);
-      --text-faint:   rgba(244,246,248,0.22);
-      --error:        rgba(248,113,113,0.85);
+/* HERO */
+.hero{min-height:100vh;background:var(--navy);position:relative;display:flex;align-items:center;padding:140px 64px 100px;overflow:hidden}
+.hero-dot{position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,.055) 1px,transparent 1px);background-size:30px 30px;pointer-events:none}
+.hero-glow{position:absolute;top:-200px;right:-100px;width:600px;height:600px;background:radial-gradient(circle,rgba(200,96,42,.12) 0%,transparent 65%);pointer-events:none}
+.hero-in{max-width:1080px;margin:0 auto;width:100%;position:relative;z-index:1}
+.eyebrow{font-family:var(--bd);font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--ember);margin-bottom:24px}
+.hero h1{font-family:var(--gd);font-size:clamp(40px,5.2vw,72px);font-weight:700;color:#fff;line-height:1.07;letter-spacing:-1.5px;max-width:820px;margin-bottom:28px}
+.hu{position:relative;display:inline}
+.hu::after{content:'';position:absolute;bottom:6px;left:0;width:0;height:3px;background:var(--ember);transition:width 1.3s cubic-bezier(.16,1,.3,1) .4s}
+.hu.on::after{width:100%}
+.hero p{font-family:var(--bd);font-size:18px;font-weight:400;color:rgba(255,255,255,.6);line-height:1.65;max-width:540px;margin-bottom:44px}
+.ha{display:flex;gap:16px;align-items:center;flex-wrap:wrap;margin-bottom:80px}
+.bp{display:inline-block;background:var(--ember);color:#fff;font-family:var(--bd);font-size:15px;font-weight:600;padding:14px 32px;border-radius:var(--r);text-decoration:none;transition:background .2s,transform .15s}
+.bp:hover{background:var(--ember2);transform:translateY(-1px)}
+.bg{display:inline-block;color:rgba(255,255,255,.65);font-family:var(--bd);font-size:15px;font-weight:500;padding:14px 0;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.2);transition:color .2s,border-color .2s}
+.bg:hover{color:#fff;border-color:rgba(255,255,255,.5)}
+.hstats{display:flex;gap:56px;flex-wrap:wrap}
+.sn{display:block;font-family:var(--gd);font-size:34px;font-weight:700;color:#fff;letter-spacing:-1px;line-height:1}
+.sl{display:block;font-family:var(--bd);font-size:13px;color:rgba(255,255,255,.38);margin-top:6px}
 
-      --font-display: 'Cormorant Garamond', Georgia, serif;
-      --font-body:    'Instrument Sans', system-ui, sans-serif;
+/* SECTION BASE */
+section{padding:96px 64px}
+.si{max-width:1080px;margin:0 auto}
+.se{font-family:var(--bd);font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--ember);margin-bottom:18px}
+.st{font-family:var(--gd);font-size:clamp(30px,3.5vw,46px);font-weight:700;color:var(--navy);letter-spacing:-1px;line-height:1.1;max-width:700px;margin-bottom:18px}
+.ss{font-family:var(--bd);font-size:16px;color:var(--slate);line-height:1.65;max-width:520px;margin-bottom:56px}
 
-      --max-w:    1160px;
-      --nav-h:    64px;
-      --sec-v:    120px;
-      --sec-h:    40px;
-    }
+/* GAP */
+.gap-s{background:var(--canvas)}
+.gg{display:grid;grid-template-columns:1fr 1.35fr 1fr;gap:16px;margin-top:0}
+.gc{background:var(--white);border:1px solid #E0E4EE;border-radius:6px;padding:36px 30px}
+.gc.f{background:var(--navy);border-color:var(--navy)}
+.gct{font-family:var(--bd);font-size:11px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--slate);margin-bottom:14px}
+.gc.f .gct{color:var(--ember)}
+.gcn{font-family:var(--gd);font-size:22px;font-weight:700;color:var(--navy);margin-bottom:24px;line-height:1.2;letter-spacing:-.4px}
+.gc.f .gcn{color:#fff}
+.gl{list-style:none;display:flex;flex-direction:column;gap:11px}
+.gl li{font-size:14px;color:var(--slate);padding-left:22px;position:relative;line-height:1.45}
+.gl li::before{content:'×';position:absolute;left:0;color:#CC3333;font-weight:700;font-size:15px;line-height:1.1}
+.gc.f .gl li{color:rgba(255,255,255,.72)}
+.gc.f .gl li::before{content:'✓';color:var(--sage)}
 
-    /* ─────────────────────────────────────────
-       RESET & BASE
-    ───────────────────────────────────────── */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: var(--font-body);
-      font-weight: 300;
-      line-height: 1.65;
-      -webkit-font-smoothing: antialiased;
-    }
-    a { color: inherit; text-decoration: none; }
-    button { font-family: var(--font-body); cursor: pointer; }
-    input, select, textarea {
-      font-family: var(--font-body);
-      font-size: 0.875rem;
-      font-weight: 300;
-    }
+/* SERVICES */
+.svs{background:var(--white)}
+.sg{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:#DDE1EC;border-radius:8px;overflow:hidden;border:2px solid #DDE1EC}
+.sc-card{background:var(--white);padding:44px 36px;transition:background .28s,color .28s;cursor:default}
+.sc-card:hover{background:var(--navy)}
+.snum{font-family:var(--gd);font-size:12px;font-weight:500;color:var(--ember);letter-spacing:1.5px;margin-bottom:22px;display:block}
+.sico{width:46px;height:46px;background:var(--canvas);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:22px;font-size:22px;transition:background .28s}
+.sc-card:hover .sico{background:rgba(200,96,42,.14)}
+.stitle{font-family:var(--gd);font-size:25px;font-weight:700;color:var(--navy);letter-spacing:-.4px;margin-bottom:6px;transition:color .28s}
+.sc-card:hover .stitle{color:#fff}
+.ssub{font-size:13px;font-weight:500;color:var(--ember);margin-bottom:14px;transition:color .28s}
+.sdesc{font-size:14px;color:var(--slate);line-height:1.62;margin-bottom:26px;transition:color .28s}
+.sc-card:hover .sdesc{color:rgba(255,255,255,.55)}
+.sf{list-style:none;display:flex;flex-direction:column;gap:8px}
+.sf li{font-size:13px;color:var(--slate);padding-left:18px;position:relative;transition:color .28s}
+.sf li::before{content:'→';position:absolute;left:0;color:var(--ember);font-size:11px;line-height:1.6}
+.sc-card:hover .sf li{color:rgba(255,255,255,.5)}
 
-    /* ─────────────────────────────────────────
-       LAYOUT
-    ───────────────────────────────────────── */
-    .container {
-      max-width: var(--max-w);
-      margin: 0 auto;
-      padding: 0 var(--sec-h);
-    }
-    .section {
-      padding: var(--sec-v) 0;
-      border-bottom: 1px solid var(--border);
-    }
-    .section--surface  { background: var(--surface); }
-    .section--surface2 { background: var(--surface-2); }
+/* INDUSTRIES */
+.ind-s{background:var(--canvas)}
+.indi-g{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:0}
+.ic{background:var(--white);border:1px solid #E0E4EE;border-radius:6px;padding:28px 20px;text-align:center;transition:transform .2s,box-shadow .2s,border-color .2s}
+.ic:hover{transform:translateY(-4px);box-shadow:0 14px 40px rgba(12,26,50,.10);border-color:#CDD3E2}
+.ii{font-size:28px;margin-bottom:10px;display:block}
+.in{font-family:var(--gd);font-size:14px;font-weight:600;color:var(--navy);line-height:1.3}
 
-    /* ─────────────────────────────────────────
-       SHARED TYPOGRAPHY
-    ───────────────────────────────────────── */
-    .section-label {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 0.6875rem;
-      font-weight: 400;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin-bottom: 28px;
-    }
-    .section-label::before {
-      content: '';
-      display: block;
-      width: 20px;
-      height: 1px;
-      background: var(--accent);
-      flex-shrink: 0;
-    }
-    .display-headline {
-      font-family: var(--font-display);
-      font-weight: 300;
-      line-height: 1.08;
-      letter-spacing: -0.02em;
-    }
-    .body-copy {
-      font-size: 0.9375rem;
-      font-weight: 300;
-      color: var(--text-muted);
-      line-height: 1.8;
-    }
+/* HOW */
+.how-s{background:var(--navy);position:relative;overflow:hidden}
+.how-s::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,.04) 1px,transparent 1px);background-size:30px 30px;pointer-events:none}
+.how-s .st,.how-s .se{color:#fff}
+.how-s .ss{color:rgba(255,255,255,.45)}
+.phases{display:grid;grid-template-columns:repeat(4,1fr);gap:36px;position:relative;z-index:1}
+.phases::before{content:'';position:absolute;top:26px;left:8%;right:8%;height:1px;background:rgba(255,255,255,.08)}
+.ph{position:relative;z-index:1}
+.phd{width:52px;height:52px;border-radius:50%;background:var(--navy2);border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;margin-bottom:22px;font-family:var(--gd);font-size:17px;font-weight:700;color:var(--ember)}
+.phu{font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--ember);margin-bottom:10px}
+.pht{font-family:var(--gd);font-size:19px;font-weight:700;color:#fff;margin-bottom:10px}
+.php{font-size:14px;color:rgba(255,255,255,.45);line-height:1.62}
 
-    /* ─────────────────────────────────────────
-       FADE-UP SCROLL ANIMATION
-    ───────────────────────────────────────── */
-    .fade-up {
-      opacity: 0;
-      transform: translateY(28px);
-      transition: opacity 0.65s ease, transform 0.65s ease;
-    }
-    .fade-up.visible { opacity: 1; transform: translateY(0); }
+/* ABOUT */
+.about-s{background:var(--white)}
+.ag{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.ap{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.apc{padding:26px 22px;background:var(--canvas);border-radius:6px;border-left:3px solid var(--ember)}
+.apn{font-family:var(--gd);font-size:30px;font-weight:700;color:var(--navy);letter-spacing:-1px;margin-bottom:4px}
+.apl{font-size:13px;color:var(--slate);line-height:1.5}
 
-    /* ─────────────────────────────────────────
-       BUTTONS
-    ───────────────────────────────────────── */
-    .btn-primary {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 13px 28px;
-      background: var(--accent);
-      border: 1px solid var(--accent);
-      border-radius: 3px;
-      font-size: 0.875rem;
-      font-weight: 400;
-      color: #09090b;
-      letter-spacing: 0.02em;
-      transition: transform 0.22s ease, box-shadow 0.22s ease, background 0.22s ease;
-    }
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 0 28px var(--accent-glow);
-      background: #5ee8d8;
-    }
-    .btn-ghost {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 13px 2px;
-      font-size: 0.875rem;
-      font-weight: 400;
-      color: var(--text-muted);
-      border-bottom: 1px solid transparent;
-      transition: color 0.2s, border-color 0.2s, transform 0.2s;
-    }
-    .btn-ghost:hover {
-      color: var(--text);
-      border-bottom-color: var(--border-hover);
-      transform: translateY(-1px);
-    }
-    .btn-outline {
-      display: inline-flex;
-      align-items: center;
-      padding: 12px 24px;
-      border: 1px solid var(--border-hover);
-      border-radius: 3px;
-      font-size: 0.875rem;
-      font-weight: 400;
-      color: var(--text-muted);
-      letter-spacing: 0.02em;
-      transition: border-color 0.2s, color 0.2s, transform 0.2s;
-    }
-    .btn-outline:hover {
-      border-color: var(--accent);
-      color: var(--accent);
-      transform: translateY(-1px);
-    }
+/* CONTACT */
+.cnt-s{background:var(--canvas)}
+.cg{display:grid;grid-template-columns:1fr 1.2fr;gap:80px;align-items:start}
+.ci h3{font-family:var(--gd);font-size:28px;font-weight:700;color:var(--navy);margin-bottom:14px;letter-spacing:-.5px;line-height:1.2}
+.ci p{font-size:16px;color:var(--slate);line-height:1.65;margin-bottom:36px}
+.cdet{display:flex;flex-direction:column;gap:14px;margin-bottom:36px}
+.citem{display:flex;align-items:center;gap:12px;font-size:14px;color:var(--navy);text-decoration:none;font-weight:500;transition:color .2s}
+.citem:hover{color:var(--ember)}
+.cico{width:36px;height:36px;background:var(--navy);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;color:#fff;flex-shrink:0;font-weight:600}
+.sbar{display:flex;gap:10px;margin-top:8px}
+.sl-a{width:38px;height:38px;border-radius:50%;background:var(--navy);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:13px;font-weight:700;transition:background .2s}
+.sl-a:hover{background:var(--ember)}
+.cf{background:var(--white);padding:44px 40px;border-radius:8px;box-shadow:0 2px 30px rgba(12,26,50,.07)}
+.cft{font-family:var(--gd);font-size:21px;font-weight:700;color:var(--navy);margin-bottom:28px;letter-spacing:-.4px}
+.fg{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:0}
+.ff{display:flex;flex-direction:column;gap:6px}
+.ff.full{grid-column:span 2}
+.ff label{font-size:11px;font-weight:600;letter-spacing:.5px;color:var(--slate);text-transform:uppercase}
+.ff input,.ff select,.ff textarea{padding:11px 14px;border:1.5px solid #DEE3EE;border-radius:var(--r);font-family:var(--bd);font-size:14px;color:var(--navy);background:#fff;outline:none;transition:border-color .2s;resize:none;width:100%}
+.ff input:focus,.ff select:focus,.ff textarea:focus{border-color:var(--ember)}
+.fsbtn{width:100%;padding:15px;background:var(--navy);color:#fff;font-family:var(--bd);font-size:15px;font-weight:600;border:none;border-radius:var(--r);cursor:pointer;margin-top:14px;transition:background .2s,transform .1s}
+.fsbtn:hover{background:var(--ember);transform:translateY(-1px)}
+.fsnote{font-size:12px;color:var(--slate);margin-top:10px;text-align:center}
+.fssuc{display:none;text-align:center;padding:48px 24px}
+.fssuc .ck{font-size:44px;margin-bottom:16px}
+.fssuc h3{font-family:var(--gd);font-size:22px;color:var(--navy);margin-bottom:10px;font-weight:700}
+.fssuc p{font-size:15px;color:var(--slate);line-height:1.6}
+.fssuc a{color:var(--ember);font-weight:600;text-decoration:none}
 
-    /* ─────────────────────────────────────────
-       NAVIGATION
-    ───────────────────────────────────────── */
-    .nav {
-      position: fixed;
-      inset: 0 0 auto 0;
-      z-index: 100;
-      height: var(--nav-h);
-      display: flex;
-      align-items: center;
-      border-bottom: 1px solid transparent;
-      transition: background 0.35s ease, border-color 0.35s ease;
-    }
-    .nav.scrolled {
-      background: rgba(9,9,11,0.85);
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
-      border-bottom-color: var(--border);
-    }
-    .nav-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      width: 100%;
-    }
-    .nav-logo {
-      font-size: 0.9375rem;
-      font-weight: 400;
-      letter-spacing: 0.04em;
-      white-space: nowrap;
-    }
-    .nav-logo em { font-style: normal; color: var(--accent); }
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 32px;
-      list-style: none;
-    }
-    .nav-links a {
-      font-size: 0.8125rem;
-      font-weight: 400;
-      color: var(--text-muted);
-      letter-spacing: 0.02em;
-      transition: color 0.2s;
-      white-space: nowrap;
-    }
-    .nav-links a:hover { color: var(--text); }
-    .btn-nav {
-      padding: 8px 18px !important;
-      border: 1px solid var(--accent) !important;
-      border-radius: 3px;
-      color: var(--accent) !important;
-      letter-spacing: 0.04em !important;
-      transition: background 0.2s, transform 0.2s, box-shadow 0.2s !important;
-    }
-    .btn-nav:hover {
-      background: var(--accent-dim) !important;
-      transform: translateY(-1px);
-      box-shadow: 0 0 18px var(--accent-dim);
-    }
-    .nav-hamburger {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      background: none;
-      border: none;
-      padding: 4px;
-    }
-    .nav-hamburger span {
-      display: block;
-      width: 22px;
-      height: 1px;
-      background: var(--text);
-      transition: transform 0.3s, opacity 0.3s;
-    }
-    .nav-hamburger.open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
-    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
-    .nav-hamburger.open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
-    .nav-mobile {
-      display: none;
-      position: fixed;
-      top: var(--nav-h);
-      inset-inline: 0;
-      background: rgba(9,9,11,0.97);
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
-      border-bottom: 1px solid var(--border);
-      padding: 20px 40px 32px;
-      z-index: 99;
-      flex-direction: column;
-    }
-    .nav-mobile.open { display: flex; }
-    .nav-mobile a {
-      padding: 15px 0;
-      font-size: 1rem;
-      color: var(--text-muted);
-      border-bottom: 1px solid var(--border);
-      transition: color 0.2s;
-    }
-    .nav-mobile a:hover { color: var(--text); }
-    .nav-mobile .mob-cta {
-      margin-top: 22px;
-      display: inline-flex;
-      justify-content: center;
-      padding: 13px;
-      border: 1px solid var(--accent);
-      border-radius: 3px;
-      font-size: 0.875rem;
-      color: var(--accent);
-      letter-spacing: 0.04em;
-    }
+/* FOOTER */
+footer{background:var(--navy);padding:44px 64px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px}
+.fl{font-family:var(--gd);font-size:17px;font-weight:700;color:#fff}
+.fl span{color:var(--ember)}
+.flinks{display:flex;gap:28px;flex-wrap:wrap}
+.flinks a{font-size:13px;color:rgba(255,255,255,.38);text-decoration:none;transition:color .2s}
+.flinks a:hover{color:#fff}
+.fr{font-size:12px;color:rgba(255,255,255,.25)}
 
-    /* ─────────────────────────────────────────
-       HERO
-    ───────────────────────────────────────── */
-    .hero {
-      position: relative;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      padding-top: var(--nav-h);
-      overflow: hidden;
-    }
-    .hero-grid {
-      position: absolute;
-      inset: 0;
-      background-image:
-        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
-      background-size: 72px 72px;
-      animation: gridScroll 20s linear infinite;
-      pointer-events: none;
-    }
-    .hero-grid::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse 75% 70% at 48% 50%, transparent 25%, var(--bg) 78%);
-    }
-    @keyframes gridScroll {
-      from { transform: translateY(0); }
-      to   { transform: translateY(72px); }
-    }
-    .hero-scan {
-      position: absolute;
-      inset-inline: 0;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(45,212,191,0.32), transparent);
-      animation: scanMove 8s ease-in-out infinite;
-      pointer-events: none;
-    }
-    @keyframes scanMove {
-      0%   { top: 18%; opacity: 0; }
-      12%  { opacity: 1; }
-      88%  { opacity: 1; }
-      100% { top: 82%; opacity: 0; }
-    }
-    .hero-content {
-      position: relative;
-      z-index: 1;
-      max-width: 820px;
-    }
-    .hero-eyebrow {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 36px;
-    }
-    .hero-dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--accent);
-      animation: dotPulse 2.6s ease-in-out infinite;
-    }
-    @keyframes dotPulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50%       { opacity: 0.3; transform: scale(0.6); }
-    }
-    .hero-eyebrow-text {
-      font-size: 0.6875rem;
-      font-weight: 400;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-    }
-    .hero h1 {
-      font-family: var(--font-display);
-      font-weight: 300;
-      font-size: clamp(2.75rem, 6.5vw, 5.5rem);
-      line-height: 1.06;
-      letter-spacing: -0.025em;
-      color: var(--text);
-      margin-bottom: 28px;
-    }
-    .hero h1 .line {
-      display: block;
-      opacity: 0;
-      transform: translateY(22px);
-      animation: lineFadeUp 0.7s ease forwards;
-    }
-    .hero h1 .line:nth-child(1) { animation-delay: 0.1s; }
-    .hero h1 .line:nth-child(2) { animation-delay: 0.22s; }
-    .hero h1 .line:nth-child(3) { animation-delay: 0.34s; }
-    @keyframes lineFadeUp { to { opacity: 1; transform: translateY(0); } }
-    .hero-sub {
-      font-size: 1.0625rem;
-      font-weight: 300;
-      color: var(--text-muted);
-      max-width: 560px;
-      line-height: 1.78;
-      margin-bottom: 44px;
-      opacity: 0;
-      animation: lineFadeUp 0.7s ease 0.48s forwards;
-    }
-    .hero-ctas {
-      display: flex;
-      align-items: center;
-      gap: 24px;
-      flex-wrap: wrap;
-      opacity: 0;
-      animation: lineFadeUp 0.7s ease 0.6s forwards;
-    }
-    .hero-scroll-cue {
-      position: absolute;
-      bottom: 40px;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      opacity: 0;
-      animation: lineFadeUp 0.7s ease 1.1s forwards;
-    }
-    .hero-scroll-line {
-      width: 1px;
-      height: 44px;
-      background: linear-gradient(to bottom, rgba(45,212,191,0.55), transparent);
-      animation: linePulse 2.4s ease-in-out infinite;
-    }
-    @keyframes linePulse { 0%, 100% { opacity: 0.4; } 50% { opacity: 1; } }
+/* DIVIDER LINE */
+.sec-line{width:100%;height:1px;background:linear-gradient(90deg,transparent,rgba(12,26,50,.12) 30%,rgba(12,26,50,.12) 70%,transparent)}
 
-    /* ─────────────────────────────────────────
-       PROBLEM
-    ───────────────────────────────────────── */
-    .problem-inner {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: start;
-    }
-    .problem-headline {
-      font-size: clamp(2rem, 3.5vw, 3rem);
-      position: sticky;
-      top: calc(var(--nav-h) + 40px);
-    }
-    .problem-body {
-      margin-top: 20px;
-    }
-    .problem-list { margin-top: 6px; }
-    .problem-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 16px;
-      padding: 22px 0;
-      border-bottom: 1px solid var(--border);
-    }
-    .problem-item:first-child { border-top: 1px solid var(--border); }
-    .problem-arrow {
-      width: 14px;
-      height: 14px;
-      flex-shrink: 0;
-      margin-top: 4px;
-      color: var(--accent);
-    }
-    .problem-text {
-      font-size: 0.9375rem;
-      font-weight: 300;
-      color: var(--text-muted);
-      line-height: 1.72;
-    }
-
-    /* ─────────────────────────────────────────
-       SERVICES
-    ───────────────────────────────────────── */
-    .services-header { max-width: 600px; margin-bottom: 60px; }
-    .services-headline { font-size: clamp(2rem, 3.5vw, 3rem); }
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1px;
-      background: var(--border);
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      overflow: hidden;
-    }
-    .service-card {
-      background: var(--bg);
-      padding: 40px 36px 44px;
-      position: relative;
-      transition: background 0.3s;
-    }
-    .service-card:hover { background: var(--surface); }
-    .service-card:hover .service-accent-line { opacity: 1; }
-    .service-accent-line {
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 1px;
-      background: var(--accent);
-      opacity: 0;
-      transition: opacity 0.3s;
-    }
-    .service-num {
-      font-size: 0.6875rem;
-      font-weight: 400;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 16px;
-    }
-    .service-title {
-      font-family: var(--font-display);
-      font-weight: 400;
-      font-size: 1.5rem;
-      color: var(--text);
-      margin-bottom: 12px;
-      letter-spacing: -0.01em;
-    }
-    .service-desc {
-      font-size: 0.875rem;
-      font-weight: 300;
-      color: var(--text-muted);
-      line-height: 1.72;
-      margin-bottom: 22px;
-    }
-    .service-rule { width: 100%; height: 1px; background: var(--border); margin-bottom: 20px; }
-    .service-deliverables {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 9px;
-    }
-    .service-deliverables li {
-      font-size: 0.8125rem;
-      font-weight: 300;
-      color: var(--text-muted);
-      padding-left: 14px;
-      position: relative;
-      line-height: 1.55;
-    }
-    .service-deliverables li::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 8px;
-      width: 5px;
-      height: 1px;
-      background: var(--accent);
-      opacity: 0.55;
-    }
-
-    /* ─────────────────────────────────────────
-       HOW WE WORK
-    ───────────────────────────────────────── */
-    .how-header { max-width: 600px; margin-bottom: 72px; }
-    .how-headline { font-size: clamp(2rem, 3.5vw, 3rem); }
-    .how-sub {
-      margin-top: 16px;
-      font-size: 0.9375rem;
-      font-weight: 300;
-      color: var(--text-muted);
-      line-height: 1.78;
-      max-width: 500px;
-    }
-    /* Timeline */
-    .timeline {
-      display: flex;
-      align-items: flex-start;
-      position: relative;
-      margin-bottom: 72px;
-    }
-    .timeline::before {
-      content: '';
-      position: absolute;
-      top: 19px;
-      left: calc(100% / 10);
-      right: calc(100% / 10);
-      height: 1px;
-      background: var(--border);
-    }
-    .timeline-step {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      position: relative;
-      z-index: 1;
-    }
-    .timeline-node {
-      width: 38px;
-      height: 38px;
-      border-radius: 50%;
-      background: var(--bg);
-      border: 1px solid var(--border);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 16px;
-      font-size: 0.6875rem;
-      font-weight: 400;
-      color: var(--text-faint);
-      letter-spacing: 0.04em;
-      transition: border-color 0.3s, color 0.3s, background 0.3s;
-    }
-    .timeline-step.active .timeline-node {
-      border-color: var(--accent);
-      color: var(--accent);
-      background: var(--accent-dim);
-    }
-    .timeline-label {
-      font-size: 0.875rem;
-      font-weight: 400;
-      color: var(--text);
-      text-align: center;
-      margin-bottom: 6px;
-    }
-    .timeline-sub {
-      font-size: 0.75rem;
-      font-weight: 300;
-      color: var(--text-faint);
-      text-align: center;
-      letter-spacing: 0.04em;
-    }
-    /* Principles */
-    .how-principles {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
-      background: var(--border);
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      overflow: hidden;
-    }
-    .principle {
-      background: var(--bg);
-      padding: 32px 28px 36px;
-      transition: background 0.3s;
-    }
-    .principle:hover { background: var(--surface); }
-    .principle-title {
-      font-size: 0.8125rem;
-      font-weight: 400;
-      color: var(--text);
-      margin-bottom: 10px;
-      letter-spacing: 0.01em;
-    }
-    .principle-body {
-      font-size: 0.8125rem;
-      font-weight: 300;
-      color: var(--text-muted);
-      line-height: 1.68;
-    }
-
-    /* ─────────────────────────────────────────
-       ENGAGEMENT TIERS
-    ───────────────────────────────────────── */
-    .tiers-header { max-width: 560px; margin-bottom: 60px; }
-    .tiers-headline { font-size: clamp(2rem, 3.5vw, 3rem); }
-    .tiers-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
-      background: var(--border);
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      overflow: hidden;
-    }
-    .tier-card {
-      background: var(--bg);
-      padding: 36px 32px 40px;
-      position: relative;
-      transition: background 0.3s;
-    }
-    .tier-card:hover { background: var(--surface); }
-    .tier-card--featured {
-      background: var(--surface);
-    }
-    .tier-card--featured .tier-top-line { opacity: 1 !important; }
-    .tier-top-line {
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 1px;
-      background: var(--accent);
-      opacity: 0;
-      transition: opacity 0.3s;
-    }
-    .tier-card:hover .tier-top-line { opacity: 0.5; }
-    .tier-badge {
-      display: inline-flex;
-      padding: 3px 10px;
-      background: var(--accent-dim);
-      border: 1px solid rgba(45,212,191,0.2);
-      border-radius: 2px;
-      font-size: 0.625rem;
-      font-weight: 400;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 20px;
-    }
-    .tier-name {
-      font-family: var(--font-display);
-      font-weight: 400;
-      font-size: 1.5rem;
-      color: var(--text);
-      margin-bottom: 6px;
-      letter-spacing: -0.01em;
-    }
-    .tier-duration {
-      font-size: 0.75rem;
-      font-weight: 300;
-      color: var(--text-faint);
-      letter-spacing: 0.08em;
-      margin-bottom: 20px;
-    }
-    .tier-desc {
-      font-size: 0.875rem;
-      font-weight: 300;
-      color: var(--text-muted);
-      line-height: 1.7;
-      margin-bottom: 24px;
-    }
-    .tier-rule { width: 100%; height: 1px; background: var(--border); margin-bottom: 20px; }
-    .tier-deliverables {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 9px;
-      margin-bottom: 28px;
-    }
-    .tier-deliverables li {
-      font-size: 0.8125rem;
-      font-weight: 300;
-      color: var(--text-muted);
-      padding-left: 14px;
-      position: relative;
-      line-height: 1.55;
-    }
-    .tier-deliverables li::before {
-      content: '';
-      position: absolute;
-      left: 0; top: 8px;
-      width: 5px; height: 1px;
-      background: var(--accent);
-      opacity: 0.5;
-    }
-    .tier-pricing {
-      font-size: 0.75rem;
-      font-weight: 300;
-      color: var(--text-faint);
-      letter-spacing: 0.04em;
-      margin-top: auto;
-      padding-top: 4px;
-    }
-
-    /* ─────────────────────────────────────────
-       REGULATED INDUSTRIES
-    ───────────────────────────────────────── */
-    .industries { border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-    .industries-inner {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-    }
-    .industry-item {
-      padding: 48px 40px;
-      border-right: 1px solid var(--border);
-    }
-    .industry-item:last-child { border-right: none; }
-    .industry-tag {
-      font-size: 0.625rem;
-      font-weight: 400;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 14px;
-    }
-    .industry-name {
-      font-family: var(--font-display);
-      font-weight: 400;
-      font-size: 1.375rem;
-      color: var(--text);
-      margin-bottom: 14px;
-      letter-spacing: -0.01em;
-    }
-    .industry-desc {
-      font-size: 0.8125rem;
-      font-weight: 300;
-      color: var(--text-muted);
-      line-height: 1.7;
-    }
-
-    /* ─────────────────────────────────────────
-       VENTURE ARM
-    ───────────────────────────────────────── */
-    .venture {
-      border-top: none;
-    }
-    .venture-inner {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: start;
-    }
-    .venture-headline { font-size: clamp(2rem, 3.5vw, 3rem); }
-    .venture-quote {
-      margin-top: 28px;
-      padding: 20px 24px;
-      border-left: 2px solid var(--accent);
-      font-family: var(--font-display);
-      font-style: italic;
-      font-size: 1.25rem;
-      font-weight: 300;
-      color: var(--text-muted);
-      line-height: 1.5;
-    }
-    .venture-body {
-      margin-top: 24px;
-    }
-    .venture-right {}
-    .venture-sub-label {
-      font-size: 0.6875rem;
-      font-weight: 400;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--text-faint);
-      margin-bottom: 16px;
-    }
-    .venture-criteria {
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-      margin-bottom: 36px;
-    }
-    .venture-criterion {
-      display: flex;
-      align-items: flex-start;
-      gap: 16px;
-      padding: 18px 0;
-      border-bottom: 1px solid var(--border);
-    }
-    .venture-criterion:first-child { border-top: 1px solid var(--border); }
-    .vc-label {
-      font-size: 0.75rem;
-      font-weight: 400;
-      letter-spacing: 0.06em;
-      color: var(--accent);
-      min-width: 80px;
-      padding-top: 2px;
-      text-transform: uppercase;
-    }
-    .vc-value {
-      font-size: 0.875rem;
-      font-weight: 300;
-      color: var(--text-muted);
-      line-height: 1.65;
-    }
-
-    /* ─────────────────────────────────────────
-       FORM SHARED STYLES
-    ───────────────────────────────────────── */
-    .form-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
-    }
-    .form-group {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-    .form-group--full { grid-column: 1 / -1; }
-    .form-label {
-      font-size: 0.75rem;
-      font-weight: 400;
-      color: var(--text-muted);
-      letter-spacing: 0.04em;
-    }
-    .form-label .req { color: var(--accent); margin-left: 2px; }
-    .form-input,
-    .form-select,
-    .form-textarea {
-      width: 100%;
-      padding: 11px 14px;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid var(--border);
-      border-radius: 3px;
-      color: var(--text);
-      font-size: 0.875rem;
-      font-weight: 300;
-      outline: none;
-      transition: border-color 0.2s, background 0.2s;
-      appearance: none;
-      -webkit-appearance: none;
-    }
-    .form-input::placeholder,
-    .form-textarea::placeholder { color: var(--text-faint); }
-    .form-input:focus,
-    .form-select:focus,
-    .form-textarea:focus {
-      border-color: rgba(45,212,191,0.4);
-      background: rgba(45,212,191,0.04);
-    }
-    .form-input.error,
-    .form-select.error,
-    .form-textarea.error { border-color: var(--error); }
-    .form-textarea {
-      resize: vertical;
-      min-height: 120px;
-      line-height: 1.65;
-    }
-    .form-select {
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='none'%3E%3Cpath d='M3 4.5L6 7.5L9 4.5' stroke='rgba(244,246,248,0.3)' stroke-width='1.2'/%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-position: right 12px center;
-      padding-right: 32px;
-    }
-    .form-select option { background: #1a1a1f; color: var(--text); }
-    .form-error {
-      font-size: 0.6875rem;
-      color: var(--error);
-      display: none;
-    }
-    .form-error.visible { display: block; }
-    .char-wrapper { position: relative; }
-    .char-count {
-      position: absolute;
-      bottom: 10px;
-      right: 12px;
-      font-size: 0.6875rem;
-      color: var(--text-faint);
-    }
-    .form-checkbox-group {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-      padding-top: 4px;
-    }
-    .checkbox-label {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 0.875rem;
-      font-weight: 300;
-      color: var(--text-muted);
-      cursor: pointer;
-    }
-    .checkbox-label input[type="checkbox"] {
-      width: 14px;
-      height: 14px;
-      appearance: none;
-      -webkit-appearance: none;
-      border: 1px solid var(--border-hover);
-      border-radius: 2px;
-      background: transparent;
-      cursor: pointer;
-      position: relative;
-      flex-shrink: 0;
-    }
-    .checkbox-label input[type="checkbox"]:checked {
-      background: var(--accent);
-      border-color: var(--accent);
-    }
-    .checkbox-label input[type="checkbox"]:checked::after {
-      content: '';
-      position: absolute;
-      top: 2px; left: 3.5px;
-      width: 5px; height: 8px;
-      border: 1.5px solid #09090b;
-      border-top: none;
-      border-left: none;
-      transform: rotate(40deg);
-    }
-    .form-submit-row {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-    .form-note {
-      font-size: 0.75rem;
-      font-weight: 300;
-      color: var(--text-faint);
-    }
-    /* Success state */
-    .form-success {
-      text-align: center;
-      padding: 48px 24px;
-    }
-    .form-success-icon {
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      background: var(--accent-dim);
-      border: 1px solid rgba(45,212,191,0.3);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 20px;
-      color: var(--accent);
-    }
-    .form-success h3 {
-      font-family: var(--font-display);
-      font-weight: 300;
-      font-size: 1.5rem;
-      color: var(--text);
-      margin-bottom: 10px;
-      letter-spacing: -0.01em;
-    }
-    .form-success p {
-      font-size: 0.875rem;
-      font-weight: 300;
-      color: var(--text-muted);
-      line-height: 1.72;
-      max-width: 380px;
-      margin: 0 auto;
-    }
-
-    /* ─────────────────────────────────────────
-       PITCH FORM SECTION
-    ───────────────────────────────────────── */
-    .pitch-header { max-width: 560px; margin-bottom: 52px; }
-    .pitch-headline { font-size: clamp(2rem, 3.5vw, 2.75rem); }
-    .pitch-sub {
-      margin-top: 14px;
-      font-size: 0.9375rem;
-      font-weight: 300;
-      color: var(--text-muted);
-      line-height: 1.75;
-    }
-    .pitch-form-wrap {
-      max-width: 720px;
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      padding: 40px;
-      background: var(--surface);
-    }
-
-    /* ─────────────────────────────────────────
-       TEAM
-    ───────────────────────────────────────── */
-    .team-header { max-width: 560px; margin-bottom: 60px; }
-    .team-headline { font-size: clamp(2rem, 3.5vw, 2.75rem); }
-    .team-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1px;
-      background: var(--border);
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      overflow: hidden;
-    }
-    .team-card {
-      background: var(--bg);
-      padding: 32px 28px 36px;
-      transition: background 0.3s;
-    }
-    .team-card:hover { background: var(--surface); }
-    .team-avatar {
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      background: var(--accent-dim);
-      border: 1px solid rgba(45,212,191,0.22);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.8125rem;
-      font-weight: 400;
-      color: var(--accent);
-      letter-spacing: 0.04em;
-      margin-bottom: 20px;
-      flex-shrink: 0;
-    }
-    .team-name {
-      font-size: 0.9375rem;
-      font-weight: 400;
-      color: var(--text);
-      margin-bottom: 4px;
-      line-height: 1.35;
-    }
-    .team-title {
-      font-size: 0.75rem;
-      font-weight: 300;
-      color: var(--accent);
-      letter-spacing: 0.04em;
-      margin-bottom: 14px;
-    }
-    .team-bio {
-      font-size: 0.8125rem;
-      font-weight: 300;
-      color: var(--text-muted);
-      line-height: 1.7;
-    }
-
-    /* ─────────────────────────────────────────
-       CONTACT
-    ───────────────────────────────────────── */
-    .contact-inner {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: start;
-    }
-    .contact-headline { font-size: clamp(2rem, 3.5vw, 2.75rem); }
-    .contact-sub { margin-top: 16px; }
-    .contact-detail {
-      margin-top: 36px;
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-    }
-    .contact-row {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-size: 0.875rem;
-      font-weight: 300;
-      color: var(--text-muted);
-    }
-    .contact-row a { transition: color 0.2s; }
-    .contact-row a:hover { color: var(--accent); }
-    .contact-dot {
-      width: 5px; height: 5px;
-      border-radius: 50%;
-      background: var(--accent);
-      flex-shrink: 0;
-    }
-    .contact-form-wrap {
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      padding: 36px;
-      background: var(--surface);
-    }
-
-    /* ─────────────────────────────────────────
-       FOOTER
-    ───────────────────────────────────────── */
-    .footer {
-      border-top: 1px solid var(--border);
-      padding: 28px 0;
-    }
-    .footer-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .footer-logo {
-      font-size: 0.8125rem;
-      font-weight: 400;
-      color: var(--text-muted);
-    }
-    .footer-logo em { font-style: normal; color: var(--accent); }
-    .footer-tagline {
-      font-size: 0.75rem;
-      font-weight: 300;
-      color: var(--text-faint);
-      letter-spacing: 0.04em;
-    }
-    .footer-right {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      gap: 4px;
-    }
-    .footer-copy {
-      font-size: 0.75rem;
-      color: var(--text-faint);
-      font-weight: 300;
-    }
-    .footer-email {
-      font-size: 0.75rem;
-      color: var(--text-muted);
-      font-weight: 300;
-      transition: color 0.2s;
-    }
-    .footer-email:hover { color: var(--accent); }
-
-    /* ─────────────────────────────────────────
-       PROMISE STRIP
-    ───────────────────────────────────────── */
-    .promise-strip {
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      background: var(--surface);
-    }
-    .promise-items {
-      display: grid;
-      grid-template-columns: repeat(3,1fr);
-    }
-    .promise-item {
-      padding: 42px 40px;
-      border-right: 1px solid var(--border);
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-    .promise-item:last-child { border-right: none; }
-    .promise-stat {
-      font-family: var(--font-display);
-      font-weight: 300;
-      font-size: 2.25rem;
-      color: var(--accent);
-      letter-spacing: -0.02em;
-      line-height: 1;
-    }
-    .promise-desc {
-      font-size: 0.8125rem;
-      font-weight: 300;
-      color: var(--text-muted);
-      line-height: 1.68;
-      max-width: 280px;
-    }
-
-    /* ─────────────────────────────────────────
-       NO DEPENDENCY CALLOUT
-    ───────────────────────────────────────── */
-    .nodep-callout {
-      margin-top: 44px;
-      padding: 32px 36px;
-      border: 1px solid rgba(45,212,191,0.18);
-      border-left: 2px solid var(--accent);
-      border-radius: 0 3px 3px 0;
-      background: var(--accent-dim);
-    }
-    .nodep-headline {
-      font-family: var(--font-display);
-      font-style: italic;
-      font-size: 1.375rem;
-      font-weight: 300;
-      color: var(--text);
-      margin-bottom: 12px;
-      line-height: 1.35;
-      letter-spacing: -0.01em;
-    }
-    .nodep-body {
-      font-size: 0.875rem;
-      font-weight: 300;
-      color: var(--text-muted);
-      line-height: 1.78;
-      max-width: 700px;
-    }
-
-    /* ─────────────────────────────────────────
-       FAQ
-    ───────────────────────────────────────── */
-    .faq-header { max-width: 560px; margin-bottom: 52px; }
-    .faq-headline { font-size: clamp(2rem, 3.5vw, 2.75rem); }
-    .faq-list {
-      max-width: 800px;
-      border-top: 1px solid var(--border);
-    }
-    .faq-item { border-bottom: 1px solid var(--border); }
-    .faq-question {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-      padding: 22px 0;
-      font-size: 0.9375rem;
-      font-weight: 400;
-      color: var(--text);
-      cursor: pointer;
-      user-select: none;
-      transition: color 0.2s;
-      list-style: none;
-    }
-    .faq-question:hover { color: var(--accent); }
-    .faq-icon {
-      width: 22px;
-      height: 22px;
-      border: 1px solid var(--border);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      transition: border-color 0.25s, transform 0.3s;
-      color: var(--text-faint);
-    }
-    .faq-item.open .faq-icon {
-      border-color: var(--accent);
-      transform: rotate(45deg);
-      color: var(--accent);
-    }
-    .faq-answer {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.4s ease;
-    }
-    .faq-item.open .faq-answer { max-height: 500px; }
-    .faq-answer-inner {
-      padding-bottom: 24px;
-      font-size: 0.9375rem;
-      font-weight: 300;
-      color: var(--text-muted);
-      line-height: 1.8;
-    }
-
-    /* ─────────────────────────────────────────
-       ADVISORY BOARD
-    ───────────────────────────────────────── */
-    .advisory-header { max-width: 560px; margin-bottom: 60px; }
-    .advisory-headline { font-size: clamp(2rem, 3.5vw, 2.75rem); }
-    .advisory-note {
-      margin-top: 14px;
-      font-size: 0.9375rem;
-      font-weight: 300;
-      color: var(--text-muted);
-      line-height: 1.75;
-    }
-    .advisory-grid {
-      display: grid;
-      grid-template-columns: repeat(4,1fr);
-      gap: 1px;
-      background: var(--border);
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      overflow: hidden;
-    }
-    .advisory-card {
-      background: var(--bg);
-      padding: 28px 26px 32px;
-      transition: background 0.3s;
-    }
-    .advisory-card:hover { background: var(--surface); }
-    .advisory-initials {
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid var(--border-hover);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.75rem;
-      font-weight: 400;
-      color: var(--text-faint);
-      letter-spacing: 0.04em;
-      margin-bottom: 16px;
-    }
-    .advisory-name {
-      font-size: 0.8125rem;
-      font-weight: 400;
-      color: var(--text);
-      margin-bottom: 4px;
-      line-height: 1.4;
-    }
-    .advisory-role {
-      font-size: 0.75rem;
-      font-weight: 300;
-      color: var(--text-faint);
-      margin-bottom: 12px;
-      letter-spacing: 0.02em;
-    }
-    .advisory-bio {
-      font-size: 0.8125rem;
-      font-weight: 300;
-      color: var(--text-muted);
-      line-height: 1.65;
-    }
-
-    /* ─────────────────────────────────────────
-       RESPONSIVE — 1024px
-    ───────────────────────────────────────── */
-    @media (max-width: 1024px) {
-      :root { --sec-h: 32px; }
-      .team-grid { grid-template-columns: repeat(2, 1fr); }
-      .team-card:nth-child(2) { border-right: none; }
-      .team-card:nth-child(1),
-      .team-card:nth-child(2) { border-bottom: 1px solid var(--border); }
-    }
-
-    /* ─────────────────────────────────────────
-       RESPONSIVE — 768px
-    ───────────────────────────────────────── */
-    @media (max-width: 768px) {
-      :root { --sec-v: 72px; --sec-h: 24px; }
-
-      .nav-links { display: none; }
-      .nav-hamburger { display: flex; }
-
-      .hero h1 { font-size: 2.5rem; }
-      .hero-ctas { flex-direction: column; align-items: flex-start; }
-
-      .problem-inner { grid-template-columns: 1fr; gap: 40px; }
-      .problem-headline { position: static; font-size: 2rem; }
-
-      .services-grid { grid-template-columns: 1fr; }
-
-      .timeline {
-        flex-direction: column;
-        gap: 0;
-        padding-left: 24px;
-      }
-      .timeline::before {
-        top: 0; bottom: 0;
-        left: 19px; right: auto;
-        width: 1px;
-        height: auto;
-      }
-      .timeline-step {
-        flex-direction: row;
-        align-items: flex-start;
-        text-align: left;
-        gap: 16px;
-        padding-bottom: 28px;
-      }
-      .timeline-step:last-child { padding-bottom: 0; }
-      .timeline-node { margin-bottom: 0; flex-shrink: 0; }
-      .timeline-label, .timeline-sub { text-align: left; }
-
-      .how-principles { grid-template-columns: 1fr; }
-
-      .tiers-grid { grid-template-columns: 1fr; }
-
-      .industries-inner { grid-template-columns: 1fr; }
-      .industry-item {
-        border-right: none;
-        border-bottom: 1px solid var(--border);
-      }
-      .industry-item:last-child { border-bottom: none; }
-
-      .venture-inner { grid-template-columns: 1fr; gap: 48px; }
-
-      .pitch-form-wrap { padding: 28px 24px; }
-      .form-grid { grid-template-columns: 1fr; }
-
-      .team-grid { grid-template-columns: 1fr; }
-      .team-card { border-right: none !important; border-bottom: 1px solid var(--border); }
-      .team-card:last-child { border-bottom: none !important; }
-
-      .contact-inner { grid-template-columns: 1fr; gap: 48px; }
-      .contact-form-wrap { padding: 28px 24px; }
-
-      .footer-inner { flex-direction: column; gap: 14px; text-align: center; }
-      .footer-right { align-items: center; }
-      .footer-tagline { display: none; }
-
-      .promise-items { grid-template-columns: 1fr; }
-      .promise-item { border-right: none; border-bottom: 1px solid var(--border); }
-      .promise-item:last-child { border-bottom: none; }
-
-      .faq-list { max-width: 100%; }
-
-      .advisory-grid { grid-template-columns: repeat(2,1fr); }
-      .advisory-card:nth-child(2) { border-right: none; }
-      .advisory-card:nth-child(1),
-      .advisory-card:nth-child(2) { border-bottom: 1px solid var(--border); }
-    }
-
-    @media (max-width: 480px) {
-      .hero h1 { font-size: 2.125rem; }
-      .form-checkbox-group { flex-direction: column; gap: 12px; }
-      .advisory-grid { grid-template-columns: 1fr; }
-      .advisory-card { border-right: none !important; border-bottom: 1px solid var(--border) !important; }
-      .advisory-card:last-child { border-bottom: none !important; }
-    }
-  </style>
+@media(max-width:960px){
+  nav{padding:18px 28px}
+  .nlinks a:not(.ncta){display:none}
+  section{padding:72px 28px}
+  .hero{padding:120px 28px 80px}
+  .gg{grid-template-columns:1fr}
+  .sg{grid-template-columns:1fr}
+  .indi-g{grid-template-columns:repeat(2,1fr)}
+  .phases{grid-template-columns:1fr 1fr}
+  .ag{grid-template-columns:1fr}
+  .cg{grid-template-columns:1fr}
+  .fg{grid-template-columns:1fr}
+  .ff.full{grid-column:span 1}
+  .hstats{gap:32px}
+  footer{flex-direction:column;align-items:flex-start;padding:36px 28px}
+}
+</style>
 </head>
 <body>
 
-  <!-- ══════════════════════════════════════
-       NAV
-  ══════════════════════════════════════ -->
-  <nav class="nav" id="nav">
-    <div class="container">
-      <div class="nav-inner">
-        <a href="#" class="nav-logo">Asis <em>Advisory</em></a>
-        <ul class="nav-links">
-          <li><a href="#services">Services</a></li>
-          <li><a href="#how">How We Work</a></li>
-          <li><a href="#engagements">Engagements</a></li>
-          <li><a href="#ventures">Ventures</a></li>
-          <li><a href="#faq">FAQ</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li><a href="mailto:hello@asisadvisory.com" class="btn-nav">Book a Readout</a></li>
+<!-- NAV -->
+<nav id="nav">
+  <a href="#" class="nl">Asis<span>.</span>Advisory</a>
+  <div class="nlinks">
+    <a href="#services">Services</a>
+    <a href="#industries">Industries</a>
+    <a href="#how">How We Work</a>
+    <a href="#about">About</a>
+    <a href="#contact" class="ncta">Get Started</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-dot"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-in">
+    <div class="eyebrow">Enterprise AI Advisory &nbsp;·&nbsp; Chicago, IL</div>
+    <h1>AI Transformation for Industries That Can't Afford to Get It <span class="hu" id="hu">Wrong.</span></h1>
+    <p>Asis Advisory is your end-to-end AI partner — from governance and strategy to engineering and scale. Purpose-built for regulated enterprises.</p>
+    <div class="ha">
+      <a href="#contact" class="bp">Start the Conversation</a>
+      <a href="#services" class="bg">See how we work →</a>
+    </div>
+    <div class="hstats">
+      <div><span class="sn">140K+</span><span class="sl">Enterprise employees impacted</span></div>
+      <div><span class="sn">20 yrs</span><span class="sl">Regulated industry expertise</span></div>
+      <div><span class="sn">Fortune 50</span><span class="sl">Enterprise track record</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- THE GAP -->
+<section class="gap-s" id="why">
+  <div class="si">
+    <div class="se">The Market Gap</div>
+    <h2 class="st">The gap no one has filled. Until now.</h2>
+    <p class="ss">Most AI firms offer strategy without execution, or engineering without governance. Regulated industries need both — from someone who's done it at scale from the inside.</p>
+    <div class="gg">
+      <div class="gc">
+        <div class="gct">Big Consulting</div>
+        <div class="gcn">Strategy Without Delivery</div>
+        <ul class="gl">
+          <li>18-month timelines, minimal output</li>
+          <li>200-slide decks, no implementation</li>
+          <li>Offshore delivery, no accountability</li>
+          <li>No regulatory depth</li>
+          <li>Strategy ends when the contract ends</li>
         </ul>
-        <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
-          <span></span><span></span><span></span>
-        </button>
       </div>
-    </div>
-  </nav>
-
-  <div class="nav-mobile" id="mobileMenu">
-    <a href="#services"     onclick="closeMenu()">Services</a>
-    <a href="#how"          onclick="closeMenu()">How We Work</a>
-    <a href="#engagements"  onclick="closeMenu()">Engagements</a>
-    <a href="#ventures"     onclick="closeMenu()">Ventures</a>
-    <a href="#faq"          onclick="closeMenu()">FAQ</a>
-    <a href="#contact"      onclick="closeMenu()">Contact</a>
-    <a href="mailto:hello@asisadvisory.com" class="mob-cta">Book a Readout</a>
-  </div>
-
-  <!-- ══════════════════════════════════════
-       HERO
-       Headline options evaluated:
-       1. "AI advisory that puts money behind its own recommendations." ← SELECTED
-       2. "Strategy you can execute. From the firm that will execute it with you."
-       3. "The AI firm that ships what it scopes."
-       #1 chosen — most specific, most differentiated, provokes the right question.
-  ══════════════════════════════════════ -->
-  <section class="hero" id="home">
-    <div class="hero-grid"></div>
-    <div class="hero-scan"></div>
-    <div class="container">
-      <div class="hero-content">
-        <div class="hero-eyebrow">
-          <div class="hero-dot"></div>
-          <span class="hero-eyebrow-text">AI Strategy · Governance · Execution</span>
-        </div>
-        <h1>
-          <span class="line">AI advisory that puts</span>
-          <span class="line">money behind its own</span>
-          <span class="line">recommendations.</span>
-        </h1>
-        <p class="hero-sub">
-          Fixed-fee AI strategy, governance, and execution — for organizations that need AI
-          to work in production, not just in presentations. We put our own delivery team
-          behind every roadmap we write.
-        </p>
-        <div class="hero-ctas">
-          <a href="mailto:hello@asisadvisory.com" class="btn-primary">Book a Readout</a>
-          <a href="#how" class="btn-ghost">See how we work →</a>
-        </div>
+      <div class="gc f">
+        <div class="gct">Asis Advisory</div>
+        <div class="gcn" style="color:#fff">Governed. Built. Scaled.</div>
+        <ul class="gl">
+          <li>End-to-end ownership — advise through scale</li>
+          <li>Governance-first engineering that ships</li>
+          <li>HIPAA, FDA &amp; SOX compliance built in</li>
+          <li>Chicago-based, enterprise-grade team</li>
+          <li>Startup speed. Regulated industry standards.</li>
+        </ul>
       </div>
-    </div>
-    <div class="hero-scroll-cue">
-      <div class="hero-scroll-line"></div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════════
-       PROMISE STRIP — time-to-first-value + key differentiators
-       TODO: Verify "30 days" commitment before publishing. Adjust if
-             the Diagnostic Sprint scope changes the realistic first-output date.
-  ══════════════════════════════════════ -->
-  <div class="promise-strip fade-up">
-    <div class="promise-items">
-      <div class="promise-item">
-        <span class="promise-stat">30 days</span>
-        <span class="promise-desc">to first deliverable — a readout of findings and ROI-quantified recommendations, before any further commitment is required.</span>
-      </div>
-      <div class="promise-item">
-        <span class="promise-stat">Fixed fee</span>
-        <span class="promise-desc">Every engagement is scoped, priced, and committed to in writing before we start. No open-ended retainers. No scope-creep surprises.</span>
-      </div>
-      <div class="promise-item">
-        <span class="promise-stat">You decide</span>
-        <span class="promise-desc">You see the readout before any further commitment is asked for. No bundled lock-in. If AI isn't the right fit yet, we'll tell you.</span>
+      <div class="gc">
+        <div class="gct">Dev Shops &amp; AI Startups</div>
+        <div class="gcn">Engineering Without Governance</div>
+        <ul class="gl">
+          <li>No regulatory or compliance expertise</li>
+          <li>Can't pass an audit or a HIPAA review</li>
+          <li>No change management capability</li>
+          <li>No org design or CoE experience</li>
+          <li>No enterprise trust or track record</li>
+        </ul>
       </div>
     </div>
   </div>
+</section>
 
-  <!-- ══════════════════════════════════════
-       PROBLEM
-  ══════════════════════════════════════ -->
-  <section class="section fade-up" id="problem">
-    <div class="container">
-      <div class="problem-inner">
-        <div>
-          <div class="section-label">Why Asis Exists</div>
-          <h2 class="display-headline problem-headline">The AI advisory market is broken in a specific way.</h2>
-          <p class="body-copy problem-body">Enterprises are spending more on AI advisory than ever. Most of it doesn't ship. Here's the pattern.</p>
+<div class="sec-line"></div>
+
+<!-- SERVICES -->
+<section class="svs" id="services">
+  <div class="si">
+    <div class="se">What We Do</div>
+    <h2 class="st">Three ways we partner with you.</h2>
+    <p class="ss">Every engagement starts with governance and ends with a functioning, self-sufficient organization. No handoffs, no gaps, no 200-slide decks.</p>
+    <div class="sg">
+      <div class="sc-card">
+        <span class="snum">01</span>
+        <div class="sico">🧭</div>
+        <div class="stitle">Advise</div>
+        <div class="ssub">AI Strategy &amp; Governance</div>
+        <p class="sdesc">We assess your AI readiness, map regulatory exposure, and design a governance architecture that scales with your ambition — not against it. No discovery theater. Just clear decisions and a path forward.</p>
+        <ul class="sf">
+          <li>AI readiness &amp; use-case audit</li>
+          <li>CAGE governance framework design</li>
+          <li>HIPAA, FDA, SOX compliance mapping</li>
+          <li>AI ethics, risk &amp; policy architecture</li>
+          <li>Vendor, model &amp; platform evaluation</li>
+        </ul>
+      </div>
+      <div class="sc-card">
+        <span class="snum">02</span>
+        <div class="sico">⚙️</div>
+        <div class="stitle">Build</div>
+        <div class="ssub">AI Engineering &amp; Products</div>
+        <p class="sdesc">Outcome-based engineering squads that ship production-grade AI — faster and more affordably than any internal team. You pay for features delivered, not hours logged.</p>
+        <ul class="sf">
+          <li>Custom AI/ML development</li>
+          <li>Agent frameworks &amp; RAG pipelines</li>
+          <li>Enterprise platform integration</li>
+          <li>Microsoft Copilot &amp; LLM deployment</li>
+          <li>AI-powered product development</li>
+        </ul>
+      </div>
+      <div class="sc-card">
+        <span class="snum">03</span>
+        <div class="sico">🚀</div>
+        <div class="stitle">Scale</div>
+        <div class="ssub">AI CoE &amp; Org Transformation</div>
+        <p class="sdesc">We don't just deploy AI — we build the organizations capable of sustaining it. From CoE design to change management to FinOps, we set you up to own it long after we're gone.</p>
+        <ul class="sf">
+          <li>AI Center of Excellence setup</li>
+          <li>Governance council &amp; AIGC design</li>
+          <li>AI talent strategy &amp; hiring support</li>
+          <li>Token economics &amp; AI FinOps</li>
+          <li>Upskilling &amp; change management</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INDUSTRIES -->
+<section class="ind-s" id="industries">
+  <div class="si">
+    <div class="se">Industries</div>
+    <h2 class="st">Where the stakes are highest.</h2>
+    <p class="ss">We specialize in industries where AI errors carry real consequences — and where governance isn't optional, it's existential.</p>
+    <div class="indi-g">
+      <div class="ic"><span class="ii">🏥</span><div class="in">Healthcare Systems &amp; Payers</div></div>
+      <div class="ic"><span class="ii">🔬</span><div class="in">Medical Devices &amp; Diagnostics</div></div>
+      <div class="ic"><span class="ii">💊</span><div class="in">Pharma &amp; Life Sciences</div></div>
+      <div class="ic"><span class="ii">🏦</span><div class="in">Financial Services</div></div>
+      <div class="ic"><span class="ii">🏭</span><div class="in">Manufacturing &amp; Supply Chain</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW WE WORK -->
+<section class="how-s" id="how">
+  <div class="si">
+    <div class="se">Our Process</div>
+    <h2 class="st">From kickoff to scaled AI in 90 days.</h2>
+    <p class="ss" style="margin-bottom:64px">A playbook we've run at scale. No 18-month timelines, no discovery theater. We get right to work — and we ship.</p>
+    <div class="phases">
+      <div class="ph">
+        <div class="phd">1</div>
+        <div class="phu">Weeks 1–2</div>
+        <div class="pht">Diagnose</div>
+        <p class="php">AI readiness audit, use-case mapping, regulatory exposure assessment, and stakeholder alignment. You'll have a clear picture of where you stand before we spend a dollar on build.</p>
+      </div>
+      <div class="ph">
+        <div class="phd">2</div>
+        <div class="phu">Weeks 3–4</div>
+        <div class="pht">Design</div>
+        <p class="php">Governance architecture, technical blueprint, org model, and a prioritized roadmap with ROI models. Everything ready for a board conversation or a budget ask.</p>
+      </div>
+      <div class="ph">
+        <div class="phd">3</div>
+        <div class="phu">Weeks 5–12</div>
+        <div class="pht">Build &amp; Deploy</div>
+        <p class="php">Engineering squads ship your first AI use case. Governance runs in parallel. Metrics tracked from day one. Real software in production, not a proof-of-concept deck.</p>
+      </div>
+      <div class="ph">
+        <div class="phd">4</div>
+        <div class="phu">Ongoing</div>
+        <div class="pht">Scale &amp; Govern</div>
+        <p class="php">CoE stood up, team trained, governance operating, FinOps in place. You own it. We stay on as a fractional partner or step back entirely — your call.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about-s" id="about">
+  <div class="si">
+    <div class="ag">
+      <div>
+        <div class="se">Why Asis</div>
+        <h2 class="st">Built by someone who's done it from the inside.</h2>
+        <p style="font-size:16px;color:var(--slate);line-height:1.72;margin-bottom:20px">Asis Advisory was founded by a former Fortune 50 AI executive who built an enterprise AI Center of Excellence from scratch — deploying governance frameworks, engineering infrastructure, and change management programs across 140,000+ employees in a regulated healthcare environment.</p>
+        <p style="font-size:16px;color:var(--slate);line-height:1.72;margin-bottom:20px">We know what it feels like to sit in the chair our clients sit in — navigating board rooms, compliance reviews, union sensitivities, and "not yet" conversations. That's what makes us different from any consulting firm that has only ever advised from the outside.</p>
+        <p style="font-size:16px;color:var(--slate);line-height:1.72;margin-bottom:32px">When we say we've done this at scale, we mean it.</p>
+        <p style="font-size:14px;color:var(--slate2)">📍 Chicago, IL &nbsp;·&nbsp; Women-Led &nbsp;·&nbsp; T200 Member &nbsp;·&nbsp; WLA</p>
+      </div>
+      <div class="ap">
+        <div class="apc"><div class="apn">140K+</div><div class="apl">Enterprise employees impacted through AI deployments</div></div>
+        <div class="apc"><div class="apn">20 yrs</div><div class="apl">Regulated industry &amp; enterprise product leadership</div></div>
+        <div class="apc"><div class="apn">Fortune 50</div><div class="apl">Track record building AI governance at enterprise scale</div></div>
+        <div class="apc"><div class="apn">5+</div><div class="apl">Proprietary AI governance frameworks designed &amp; deployed</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sec-line"></div>
+
+<!-- CONTACT -->
+<section class="cnt-s" id="contact">
+  <div class="si">
+    <div class="cg">
+      <div class="ci">
+        <div class="se">Get In Touch</div>
+        <h3>Ready to govern, build, and scale your AI?</h3>
+        <p>Tell us what you're working on. We'll respond within 24 hours with a clear point of view — no sales theater, no NDAs required to have a conversation.</p>
+        <div class="cdet">
+          <a href="mailto:hello@asisadvisory.com" class="citem">
+            <div class="cico">✉</div>
+            hello@asisadvisory.com
+          </a>
+          <a href="https://linkedin.com/company/asis-advisory" class="citem" target="_blank" rel="noopener">
+            <div class="cico" style="background:#0077B5">in</div>
+            linkedin.com/company/asis-advisory
+          </a>
+          <a href="https://regulatedintelligence.substack.com" class="citem" target="_blank" rel="noopener">
+            <div class="cico" style="background:var(--ember)">S</div>
+            Regulated Intelligence — Newsletter
+          </a>
         </div>
-        <div class="problem-list">
-          <div class="problem-item">
-            <svg class="problem-arrow" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.4">
-              <path d="M2 7h10M8 3l4 4-4 4"/>
-            </svg>
-            <p class="problem-text">Most AI engagements produce strategy decks or isolated pilots that never reach production. The handoff from senior talent to junior delivery breaks the chain every time.</p>
+        <div class="sbar">
+          <a href="https://linkedin.com/company/asis-advisory" class="sl-a" target="_blank" title="LinkedIn Company Page">in</a>
+          <a href="https://linkedin.com/in/shyna" class="sl-a" target="_blank" title="Founder LinkedIn">🔗</a>
+          <a href="https://regulatedintelligence.substack.com" class="sl-a" target="_blank" title="Substack Newsletter">S</a>
+        </div>
+      </div>
+      <div>
+        <div class="cf" id="cfForm">
+          <div class="cft">Start a conversation</div>
+          <div class="fg">
+            <div class="ff">
+              <label>Your Name</label>
+              <input type="text" id="fn" placeholder="First Last">
+            </div>
+            <div class="ff">
+              <label>Company</label>
+              <input type="text" id="fc" placeholder="Your organization">
+            </div>
+            <div class="ff">
+              <label>Your Role</label>
+              <input type="text" id="fr" placeholder="CTO, CDO, VP AI...">
+            </div>
+            <div class="ff">
+              <label>Industry</label>
+              <select id="fi">
+                <option value="">Select industry</option>
+                <option>Healthcare Systems &amp; Payers</option>
+                <option>Medical Devices &amp; Diagnostics</option>
+                <option>Pharma &amp; Life Sciences</option>
+                <option>Financial Services</option>
+                <option>Manufacturing &amp; Supply Chain</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="ff full">
+              <label>What are you trying to solve?</label>
+              <textarea id="fm" rows="4" placeholder="Tell us about your AI challenge — governance, strategy, a specific build, or all of the above..."></textarea>
+            </div>
+            <div class="ff full">
+              <label>Work Email</label>
+              <input type="email" id="fe" placeholder="you@company.com">
+            </div>
           </div>
-          <div class="problem-item">
-            <svg class="problem-arrow" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.4">
-              <path d="M2 7h10M8 3l4 4-4 4"/>
-            </svg>
-            <p class="problem-text">Enterprises are increasingly pulling AI work in-house because external advisors show up with theory and no delivery capability — then hand over a deck and rotate off.</p>
-          </div>
-          <div class="problem-item">
-            <svg class="problem-arrow" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.4">
-              <path d="M2 7h10M8 3l4 4-4 4"/>
-            </svg>
-            <p class="problem-text">Big-firm engagements are open-ended and slow. Boutique development shops are cheap and fast but lack the governance depth regulated industries require — and the credibility to operate at board level.</p>
-          </div>
-          <div class="problem-item">
-            <svg class="problem-arrow" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.4">
-              <path d="M2 7h10M8 3l4 4-4 4"/>
-            </svg>
-            <p class="problem-text">The market is bifurcated between "advise you" and "build for you." Almost no firm commits both capital and delivery talent to its own roadmap. That gap is where Asis operates.</p>
-          </div>
+          <button class="fsbtn" onclick="handleSend()">Send Message →</button>
+          <p class="fsnote">We respond within 24 hours. No spam, ever.</p>
+        </div>
+        <div class="fssuc" id="cfSuc">
+          <div class="ck">✓</div>
+          <h3>Message sent.</h3>
+          <p>We'll be in touch within 24 hours.<br><br>In the meantime, subscribe to <strong>Regulated Intelligence</strong> — our newsletter on AI governance, strategy, and real builds in regulated industries.<br><br><a href="https://regulatedintelligence.substack.com">Subscribe on Substack →</a></p>
         </div>
       </div>
     </div>
-  </section>
-
-  <!-- ══════════════════════════════════════
-       SERVICES
-  ══════════════════════════════════════ -->
-  <section class="section section--surface fade-up" id="services">
-    <div class="container">
-      <div class="services-header">
-        <div class="section-label">What We Do</div>
-        <h2 class="display-headline services-headline">Four service lines.<br>One firm that executes all of them.</h2>
-      </div>
-      <div class="services-grid">
-
-        <!-- 01 -->
-        <div class="service-card">
-          <div class="service-accent-line"></div>
-          <div class="service-num">01 — AI Strategy &amp; Roadmap</div>
-          <div class="service-title">Strategy &amp; Roadmap</div>
-          <p class="service-desc">Enterprise AI maturity assessment and prioritized roadmap — tied to business outcomes, not technology for its own sake.</p>
-          <div class="service-rule"></div>
-          <ul class="service-deliverables">
-            <li>Enterprise AI maturity assessment across all functions</li>
-            <li>Use-case prioritization by ROI and feasibility — not hype</li>
-            <li>30-60-90 day execution roadmap with milestones and owners</li>
-            <li>Board-ready strategy documentation and executive readout</li>
-          </ul>
-        </div>
-
-        <!-- 02 -->
-        <div class="service-card">
-          <div class="service-accent-line"></div>
-          <div class="service-num">02 — Governance &amp; Risk Setup</div>
-          <div class="service-title">Governance &amp; Risk</div>
-          <p class="service-desc">AI governance infrastructure designed for regulated industries — from council design to audit-ready documentation.</p>
-          <div class="service-rule"></div>
-          <ul class="service-deliverables">
-            <li>AI governance council design and operating charter</li>
-            <li>Policy and control frameworks built for your risk profile</li>
-            <li>Regulatory mapping — HIPAA, FDA/SaMD, GDPR, EU AI Act, SOX</li>
-            <li>Vendor and model risk review processes, audit-ready documentation</li>
-          </ul>
-        </div>
-
-        <!-- 03 -->
-        <div class="service-card">
-          <div class="service-accent-line"></div>
-          <div class="service-num">03 — AI Rationalization</div>
-          <div class="service-title">AI Rationalization</div>
-          <p class="service-desc">An honest audit of what you're actually running, what it costs, and what's worth keeping. Kill, consolidate, or scale — with a consistent framework.</p>
-          <div class="service-rule"></div>
-          <ul class="service-deliverables">
-            <li>Full inventory and audit of existing AI/GenAI initiatives and spend</li>
-            <li>Kill / consolidate / scale recommendations with value scoring</li>
-            <li>ROI framework applied consistently across all active initiatives</li>
-            <li>Shadow AI identification and remediation — including clinical environments</li>
-          </ul>
-        </div>
-
-        <!-- 04 -->
-        <div class="service-card">
-          <div class="service-accent-line"></div>
-          <div class="service-num">04 — AI Enablement &amp; Software Factory</div>
-          <div class="service-title">Enablement &amp; Execution</div>
-          <p class="service-desc">The execution arm. We build what we recommend — and leave your team with the capability to keep building without us.</p>
-          <div class="service-rule"></div>
-          <ul class="service-deliverables">
-            <li>Agentic workflow build-out and automation pipelines</li>
-            <li>Internal tooling and AI copilots scoped to real workflows</li>
-            <li>Repeatable software factory delivery model with documented standards</li>
-            <li>Capability transfer to client team — no consultant dependency created</li>
-          </ul>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════════
-       HOW WE WORK
-  ══════════════════════════════════════ -->
-  <section class="section fade-up" id="how">
-    <div class="container">
-      <div class="how-header">
-        <div class="section-label">How We Work</div>
-        <h2 class="display-headline how-headline">Fixed-fee. Readout first.<br>You decide what's next.</h2>
-        <p class="how-sub">We designed our model to remove the three biggest failure modes in AI advisory: open-ended cost, locked-in commitment before you see results, and delivery teams that rotate off the moment the strategy is signed.</p>
-      </div>
-
-      <!-- Timeline -->
-      <div class="timeline">
-        <div class="timeline-step active">
-          <div class="timeline-node">01</div>
-          <div>
-            <div class="timeline-label">Assess</div>
-            <div class="timeline-sub">Days 1–14</div>
-          </div>
-        </div>
-        <div class="timeline-step active">
-          <div class="timeline-node">02</div>
-          <div>
-            <div class="timeline-label">Readout</div>
-            <div class="timeline-sub">Day 15–30</div>
-          </div>
-        </div>
-        <div class="timeline-step active">
-          <div class="timeline-node">03</div>
-          <div>
-            <div class="timeline-label">Decide</div>
-            <div class="timeline-sub">Day 30</div>
-          </div>
-        </div>
-        <div class="timeline-step">
-          <div class="timeline-node">04</div>
-          <div>
-            <div class="timeline-label">Execute</div>
-            <div class="timeline-sub">Days 31–90</div>
-          </div>
-        </div>
-        <div class="timeline-step">
-          <div class="timeline-node">05</div>
-          <div>
-            <div class="timeline-label">Scale</div>
-            <div class="timeline-sub">Day 91+</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Principles -->
-      <div class="how-principles">
-        <div class="principle">
-          <div class="principle-title">Fixed fee. Always.</div>
-          <div class="principle-body">No open-ended retainers. No surprise scope creep. Every engagement is scoped, priced, and committed to in writing before we start. You know the number before you sign.</div>
-        </div>
-        <div class="principle">
-          <div class="principle-title">Readout before commitment.</div>
-          <div class="principle-body">Every engagement starts with a structured assessment and a readout of findings with ROI-quantified recommendations — before any further commitment is asked for. You see the work before you extend the relationship.</div>
-        </div>
-        <div class="principle">
-          <div class="principle-title">You decide what's next.</div>
-          <div class="principle-body">After the readout, you choose whether to continue into execution. No pressure, no bundled lock-in, no "we assumed you'd continue." If the readout says AI isn't the right fit yet, we'll tell you that.</div>
-        </div>
-        <div class="principle">
-          <div class="principle-title">We execute what we recommend.</div>
-          <div class="principle-body">The same team that wrote the roadmap helps build it. 30-60-90 day operating cadence with milestones, not a vague transformation program that lives in a deck.</div>
-        </div>
-        <div class="principle">
-          <div class="principle-title">Built for regulated industries.</div>
-          <div class="principle-body">Governance, risk, and compliance are baked into every engagement from day one — not bolted on after the fact when legal raises a flag. We've run this in HIPAA-regulated clinical environments.</div>
-        </div>
-        <div class="principle">
-          <div class="principle-title">30-day cadence, not quarterly reports.</div>
-          <div class="principle-body">We report against milestones every 30 days. First working output within the first sprint. Executives get a clear picture of progress — or a clear picture of what needs to change — on a schedule they can hold us to.</div>
-        </div>
-      </div>
-
-      <div class="nodep-callout">
-        <div class="nodep-headline">"We work to make ourselves unnecessary."</div>
-        <p class="nodep-body">Every Asis engagement is designed to transfer capability to your team — not create consultant dependency. When we build your governance framework, your team runs it. When we stand up your AI intake process, your people own it. When we deploy your first AI workflows, your engineers maintain them. The explicit goal of every engagement is a client who doesn't need us to come back. We think that's the right way to do this work. We also think it's why clients do come back.</p>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════════
-       ENGAGEMENT TIERS
-  ══════════════════════════════════════ -->
-  <section class="section section--surface fade-up" id="engagements">
-    <div class="container">
-      <div class="tiers-header">
-        <div class="section-label">Engagement Tiers</div>
-        <h2 class="display-headline tiers-headline">Three ways to engage.<br>All fixed-fee.</h2>
-      </div>
-      <div class="tiers-grid">
-
-        <div class="tier-card">
-          <div class="tier-top-line"></div>
-          <div class="tier-badge">Entry Point</div>
-          <div class="tier-name">Diagnostic Sprint</div>
-          <div class="tier-duration">30 – 60 Days</div>
-          <p class="tier-desc">The required entry point for new clients. A structured assessment of your AI maturity, opportunity landscape, and governance gaps — with a board-ready readout of what we found.</p>
-          <div class="tier-rule"></div>
-          <ul class="tier-deliverables">
-            <li>AI maturity score across all relevant functions</li>
-            <li>Prioritized use-case list with ROI estimates</li>
-            <li>Governance gap analysis and compliance exposure map</li>
-            <li>Executive readout — findings, recommendations, next steps</li>
-          </ul>
-          <div class="tier-pricing">Custom fixed-fee — request a scoped quote</div>
-        </div>
-
-        <div class="tier-card tier-card--featured">
-          <div class="tier-top-line"></div>
-          <div class="tier-badge">Core Engagement</div>
-          <div class="tier-name">Execution Engagement</div>
-          <div class="tier-duration">90 Days</div>
-          <p class="tier-desc">For clients who continue past the readout. The roadmap moves from document to deployed — governance framework stood up, first use cases built, team enabled to continue without us.</p>
-          <div class="tier-rule"></div>
-          <ul class="tier-deliverables">
-            <li>30-60-90 day execution roadmap in active motion</li>
-            <li>Governance framework stood up with council operating</li>
-            <li>First use case(s) built, tested, and deployed</li>
-            <li>Team enablement and training — capability transfer, not dependency</li>
-          </ul>
-          <div class="tier-pricing">Custom fixed-fee, milestone-based — request a scoped quote</div>
-        </div>
-
-        <div class="tier-card">
-          <div class="tier-top-line"></div>
-          <div class="tier-badge">Ongoing</div>
-          <div class="tier-name">AI Health Check</div>
-          <div class="tier-duration">Quarterly</div>
-          <p class="tier-desc">For clients with existing AI programs that need an independent audit. Rationalize what you have, catch what's drifting, and keep the roadmap current as the landscape shifts.</p>
-          <div class="tier-rule"></div>
-          <ul class="tier-deliverables">
-            <li>Rationalization of current AI/GenAI spend and initiatives</li>
-            <li>Governance and compliance audit against current standards</li>
-            <li>Updated prioritization roadmap with new use cases scored</li>
-            <li>Quarterly advisory cadence and executive briefing</li>
-          </ul>
-          <div class="tier-pricing">Custom fixed-fee — request a scoped quote</div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════════
-       FAQ
-  ══════════════════════════════════════ -->
-  <section class="section fade-up" id="faq">
-    <div class="container">
-      <div class="faq-header">
-        <div class="section-label">Common Questions</div>
-        <h2 class="display-headline faq-headline">Addressed directly.</h2>
-      </div>
-      <div class="faq-list">
-
-        <div class="faq-item">
-          <div class="faq-question" role="button" tabindex="0">
-            <span>How is Asis different from a Big Four or McKinsey engagement?</span>
-            <div class="faq-icon">
-              <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M5 1v8M1 5h8"/>
-              </svg>
-            </div>
-          </div>
-          <div class="faq-answer">
-            <div class="faq-answer-inner">Three things. First, we're fixed-fee — no open-ended retainers or scope creep. Second, the senior operators who write your strategy are the same people who help execute it. There's no handoff to a junior team after the deck is signed. Third, we're sized for speed: 30-day first deliverable, 90-day execution engagement. Big-firm timelines run 12–24 months and are designed around their staffing model, not your urgency. We work at the pace regulated enterprises actually need to move to stay ahead of the regulatory calendar.
-            </div>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <div class="faq-question" role="button" tabindex="0">
-            <span>What if the readout says AI isn't the right fit for us yet?</span>
-            <div class="faq-icon">
-              <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M5 1v8M1 5h8"/>
-              </svg>
-            </div>
-          </div>
-          <div class="faq-answer">
-            <div class="faq-answer-inner">We tell you. That's the point of the readout. If the honest answer is "your data infrastructure isn't ready," or "you have three foundational problems to solve before AI will stick," we say that — and we document it clearly, with a prioritized plan for what to fix first. We'd rather spend 30 days telling you the truth than 90 days executing the wrong thing. Clients who hear hard news from us at readout consistently come back when they're ready, because they trust the assessment.
-            </div>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <div class="faq-question" role="button" tabindex="0">
-            <span>How do you handle data security and IP during an engagement?</span>
-            <div class="faq-icon">
-              <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M5 1v8M1 5h8"/>
-              </svg>
-            </div>
-          </div>
-          <div class="faq-answer">
-            <div class="faq-answer-inner">We operate under mutual NDA and a clearly scoped data handling agreement from the start of every engagement. For healthcare clients, we operate under BAA as required by HIPAA. We don't use client data to train models, we don't retain sensitive materials after engagement close, and all work product created during the engagement belongs to the client. For highly sensitive environments, we also support air-gapped or on-premises working arrangements — we've done it in clinical settings before.
-            </div>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <div class="faq-question" role="button" tabindex="0">
-            <span>We already have AI vendors and tools in place. Do we still start with a Diagnostic Sprint?</span>
-            <div class="faq-icon">
-              <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M5 1v8M1 5h8"/>
-              </svg>
-            </div>
-          </div>
-          <div class="faq-answer">
-            <div class="faq-answer-inner">Yes — and the Diagnostic Sprint is often most valuable for organizations that already have AI in motion. The assessment tells you what's actually delivering value vs. what's consuming budget, identifies governance gaps created by rapid tool adoption, and gives you a prioritized view of what to scale, what to kill, and what to govern more tightly. If you're already running AI programs, the AI Health Check engagement may also be a fit — it's designed specifically for organizations that need an independent audit of an existing portfolio.
-            </div>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <div class="faq-question" role="button" tabindex="0">
-            <span>What happens after the 90-day engagement ends?</span>
-            <div class="faq-icon">
-              <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M5 1v8M1 5h8"/>
-              </svg>
-            </div>
-          </div>
-          <div class="faq-answer">
-            <div class="faq-answer-inner">Your team owns everything we built. The governance framework, the AI intake process, the vendor vetting scorecard, the roadmap — all of it transfers to your organization with documentation designed for internal operation. Most clients continue with a quarterly AI Health Check to keep the roadmap current and the governance framework calibrated as regulations and the market shift. Some engage us for a second 90-day sprint on the next priority. Either way, the decision is yours — we've designed the engagement to leave you self-sufficient, not dependent.
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════════
-       REGULATED INDUSTRIES
-  ══════════════════════════════════════ -->
-  <section class="industries section--surface fade-up">
-    <div class="industries-inner">
-
-      <div class="industry-item">
-        <div class="industry-tag">Healthcare &amp; Life Sciences</div>
-        <div class="industry-name">Clinical &amp; Health System AI</div>
-        <p class="industry-desc">We've run AI governance councils and deployed GenAI inside live clinical environments under HIPAA. We know what "audit-ready" means in practice — not in theory — and what FDA/SaMD classification means for your software decisions.</p>
-      </div>
-
-      <div class="industry-item">
-        <div class="industry-tag">Financial Services</div>
-        <div class="industry-name">Regulated Financial AI</div>
-        <p class="industry-desc">Model risk, explainability requirements, SOX controls, and the reality of deploying AI in environments where a wrong output triggers a compliance event. We design governance frameworks that treat these as first-order constraints, not afterthoughts.</p>
-      </div>
-
-      <div class="industry-item">
-        <div class="industry-tag">Other Regulated Sectors</div>
-        <div class="industry-name">Regulated Enterprise AI</div>
-        <p class="industry-desc">The governance problems in regulated industries share a common structure: data privacy, audit trails, third-party model risk, and board-level accountability. If your sector requires it, we've likely built the framework for it.</p>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════════
-       VENTURE ARM
-       Different visual treatment — signals a distinct motion
-  ══════════════════════════════════════ -->
-  <section class="section section--surface2 venture fade-up" id="ventures">
-    <div class="container">
-      <div class="venture-inner">
-        <div>
-          <div class="section-label">Asis Ventures</div>
-          <h2 class="display-headline venture-headline">We back the founders we'd want to advise.</h2>
-          <div class="venture-quote">
-            "We back the founders we'd want to advise, and advise the founders we'd want to back."
-          </div>
-          <p class="body-copy venture-body">
-            Alongside our advisory practice, Asis invests in and advises early-stage AI startups — particularly in health and med-tech and enterprise AI infrastructure. We bring the same operator depth to our portfolio that we bring to clients: hands-on, execution-committed, and built for regulated environments.
-            <br><br>
-            Founders in our portfolio get more than capital. They get advisory board seats, direct access to an operator network in health systems and regulated enterprise, and a team that has actually deployed what they're building — at scale.
-          </p>
-        </div>
-        <div class="venture-right">
-          <div class="venture-sub-label">What We Look For</div>
-          <div class="venture-criteria">
-            <div class="venture-criterion">
-              <div class="vc-label">Stage</div>
-              <div class="vc-value">Pre-seed to Series A</div>
-            </div>
-            <div class="venture-criterion">
-              <div class="vc-label">Sectors</div>
-              <div class="vc-value">Health &amp; Med-Tech, Enterprise AI Infrastructure, AI Governance &amp; Compliance tooling</div>
-            </div>
-            <div class="venture-criterion">
-              <div class="vc-label">Check Size</div>
-              <div class="vc-value">Placeholder — to be disclosed on request</div>
-            </div>
-            <div class="venture-criterion">
-              <div class="vc-label">What You Get</div>
-              <div class="vc-value">Advisory board seat, hands-on operator support, potential co-investment, and network access across health systems and regulated enterprise</div>
-            </div>
-          </div>
-          <a href="#pitch" class="btn-outline">Submit a Pitch →</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════════
-       PITCH FORM
-       NOTE: Form submission is STUBBED — functional UI, no real backend.
-       TODO: Connect to a real form backend before going live.
-             Options: Formspree, a serverless function at /api/pitch-submit,
-             or a CRM webhook (HubSpot, Salesforce, Airtable, etc.)
-  ══════════════════════════════════════ -->
-  <section class="section fade-up" id="pitch">
-    <div class="container">
-      <div class="pitch-header">
-        <div class="section-label">For Founders</div>
-        <h2 class="display-headline pitch-headline">Submit for advisory board consideration or investment.</h2>
-        <p class="pitch-sub">We review every submission personally. If there's a fit, we'll reach out within two weeks to schedule a conversation.</p>
-      </div>
-
-      <div class="pitch-form-wrap">
-        <div id="pitchFormWrap">
-          <form id="pitchForm" novalidate>
-            <div class="form-grid">
-
-              <div class="form-group">
-                <label class="form-label" for="founderName">Founder Name <span class="req">*</span></label>
-                <input class="form-input" type="text" id="founderName" placeholder="Your full name" required>
-                <span class="form-error" id="founderNameErr">Required.</span>
-              </div>
-
-              <div class="form-group">
-                <label class="form-label" for="founderEmail">Email <span class="req">*</span></label>
-                <input class="form-input" type="email" id="founderEmail" placeholder="you@company.com" required>
-                <span class="form-error" id="founderEmailErr">Enter a valid email address.</span>
-              </div>
-
-              <div class="form-group">
-                <label class="form-label" for="companyName">Company Name <span class="req">*</span></label>
-                <input class="form-input" type="text" id="companyName" placeholder="Your company" required>
-                <span class="form-error" id="companyNameErr">Required.</span>
-              </div>
-
-              <div class="form-group">
-                <label class="form-label" for="companyUrl">Website or LinkedIn</label>
-                <input class="form-input" type="text" id="companyUrl" placeholder="https://...">
-              </div>
-
-              <div class="form-group form-group--full">
-                <label class="form-label" for="oneLiner">One-Line Description <span class="req">*</span></label>
-                <input class="form-input" type="text" id="oneLiner" placeholder="What your company does in one sentence" required>
-                <span class="form-error" id="oneLinerErr">Required.</span>
-              </div>
-
-              <div class="form-group">
-                <label class="form-label" for="stage">Stage <span class="req">*</span></label>
-                <select class="form-select" id="stage" required>
-                  <option value="">Select stage</option>
-                  <option value="pre-seed">Pre-Seed</option>
-                  <option value="seed">Seed</option>
-                  <option value="series-a">Series A</option>
-                  <option value="other">Other</option>
-                </select>
-                <span class="form-error" id="stageErr">Please select a stage.</span>
-              </div>
-
-              <div class="form-group">
-                <label class="form-label" for="sector">Sector <span class="req">*</span></label>
-                <select class="form-select" id="sector" required>
-                  <option value="">Select sector</option>
-                  <option value="health-medtech">Health / Med-Tech</option>
-                  <option value="enterprise-ai">Enterprise AI</option>
-                  <option value="ai-governance">AI Governance / Infrastructure</option>
-                  <option value="other">Other</option>
-                </select>
-                <span class="form-error" id="sectorErr">Please select a sector.</span>
-              </div>
-
-              <div class="form-group form-group--full">
-                <label class="form-label">What are you looking for? <span class="req">*</span></label>
-                <div class="form-checkbox-group" id="interestGroup">
-                  <label class="checkbox-label">
-                    <input type="checkbox" name="interest" value="advisory"> Advisory Board
-                  </label>
-                  <label class="checkbox-label">
-                    <input type="checkbox" name="interest" value="investment"> Investment
-                  </label>
-                  <label class="checkbox-label">
-                    <input type="checkbox" name="interest" value="both"> Both
-                  </label>
-                </div>
-                <span class="form-error" id="interestErr">Select at least one option.</span>
-              </div>
-
-              <div class="form-group form-group--full">
-                <label class="form-label" for="pitchText">Short Pitch <span class="req">*</span> <span style="color:var(--text-faint);font-weight:300;"> — up to 500 characters</span></label>
-                <div class="char-wrapper">
-                  <textarea class="form-textarea" id="pitchText" maxlength="500" rows="5" placeholder="Tell us about your company, the problem you're solving, and why now." required></textarea>
-                  <div class="char-count"><span id="pitchCount">0</span>/500</div>
-                </div>
-                <span class="form-error" id="pitchTextErr">Required.</span>
-              </div>
-
-              <div class="form-group form-group--full">
-                <label class="form-label" for="deckUrl">Deck or Data Room Link <span style="color:var(--text-faint);font-weight:300;"> — optional</span></label>
-                <input class="form-input" type="text" id="deckUrl" placeholder="Notion, Docsend, Google Drive, etc.">
-              </div>
-
-            </div>
-
-            <div class="form-submit-row" style="margin-top:28px;">
-              <button type="submit" class="btn-primary" id="pitchSubmitBtn">Submit Application</button>
-              <span class="form-note">We review every submission personally and respond within two weeks.</span>
-            </div>
-          </form>
-        </div>
-
-        <div class="form-success" id="pitchSuccess" style="display:none;">
-          <div class="form-success-icon">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M4 10l4 4 8-8"/>
-            </svg>
-          </div>
-          <h3>Application received.</h3>
-          <p>We review every submission personally. If there's a fit, we'll be in touch within two weeks to schedule a conversation.</p>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════════
-       TEAM
-       PLACEHOLDER — replace all bios and photos before launch.
-       Initials avatars used in place of real photography.
-  ══════════════════════════════════════ -->
-  <section class="section section--surface fade-up" id="team">
-    <div class="container">
-      <div class="team-header">
-        <div class="section-label">The Team</div>
-        <h2 class="display-headline team-headline">Operators, not just advisors.</h2>
-      </div>
-      <div class="team-grid">
-
-        <!-- PLACEHOLDER: Replace with Shyna's real name, bio, and photo -->
-        <div class="team-card">
-          <div class="team-avatar">SA</div>
-          <div class="team-name">[Founder Name]</div>
-          <div class="team-title">Managing Partner</div>
-          <!-- PLACEHOLDER BIO — replace with real bio -->
-          <p class="team-bio">Background in enterprise AI strategy, governance, and large-cap program leadership across regulated industries. Prior experience deploying AI governance infrastructure inside Fortune 50 healthcare organizations.</p>
-        </div>
-
-        <!-- PLACEHOLDER: Dr. Amara Reyes — placeholder persona, replace with real bio/photo when hired -->
-        <div class="team-card">
-          <div class="team-avatar">AR</div>
-          <div class="team-name">Dr. Amara Reyes</div>
-          <div class="team-title">Partner, Health &amp; Med-Tech</div>
-          <!-- PLACEHOLDER BIO -->
-          <p class="team-bio">MD/PhD background with prior roles in digital health product leadership and FDA/SaMD regulatory strategy. Leads Asis's healthcare and life sciences practice and the venture arm's health-tech investment thesis.</p>
-        </div>
-
-        <!-- PLACEHOLDER: Governance Partner — replace with real hire -->
-        <div class="team-card">
-          <div class="team-avatar">PG</div>
-          <div class="team-name">[Partner Name]</div>
-          <div class="team-title">Partner, AI Governance &amp; Risk</div>
-          <!-- PLACEHOLDER BIO -->
-          <p class="team-bio">Enterprise risk and compliance background with specific depth in model governance, AI audit frameworks, and regulatory mapping across healthcare, financial services, and federal environments.</p>
-        </div>
-
-        <!-- PLACEHOLDER: Engineering Partner — replace with real hire -->
-        <div class="team-card">
-          <div class="team-avatar">PE</div>
-          <div class="team-name">[Partner Name]</div>
-          <div class="team-title">Partner, AI Engineering &amp; Software Factory</div>
-          <!-- PLACEHOLDER BIO -->
-          <p class="team-bio">Applied ML and engineering delivery leadership background. Leads the software factory practice — from agentic workflow build-out to capability transfer and client team enablement.</p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════════
-       ADVISORY BOARD
-       PLACEHOLDER — replace all names, roles, and bios before launch.
-       These are illustrative profiles representing the caliber and
-       backgrounds the advisory board is being built toward.
-  ══════════════════════════════════════ -->
-  <section class="section section--surface fade-up" id="advisory">
-    <div class="container">
-      <div class="advisory-header">
-        <div class="section-label">Advisory Board</div>
-        <h2 class="display-headline advisory-headline">Senior operators across regulated enterprise.</h2>
-        <p class="advisory-note">Asis's advisory board brings board-level credibility across regulated healthcare, financial services, and enterprise AI — the industries where governance decisions carry the most consequence.</p>
-      </div>
-      <div class="advisory-grid">
-
-        <!-- PLACEHOLDER — replace with real advisor -->
-        <div class="advisory-card">
-          <div class="advisory-initials">—</div>
-          <div class="advisory-name">[Chief Digital Officer]</div>
-          <div class="advisory-role">Regional Health System</div>
-          <p class="advisory-bio">20+ years leading digital transformation and technology strategy at a major regional health system. Guided enterprise AI adoption through HIPAA compliance and clinical governance requirements.</p>
-        </div>
-
-        <!-- PLACEHOLDER — replace with real advisor -->
-        <div class="advisory-card">
-          <div class="advisory-initials">—</div>
-          <div class="advisory-name">[Chief Risk Officer]</div>
-          <div class="advisory-role">Fortune 500 Financial Services</div>
-          <p class="advisory-bio">Led model risk and AI governance programs at a top-10 financial institution. Deep experience in regulatory frameworks, audit-readiness, and building risk infrastructure for algorithmic decision-making at scale.</p>
-        </div>
-
-        <!-- PLACEHOLDER — replace with real advisor -->
-        <div class="advisory-card">
-          <div class="advisory-initials">—</div>
-          <div class="advisory-name">[Senior Policy Official]</div>
-          <div class="advisory-role">Former Federal Health Regulator</div>
-          <p class="advisory-bio">Former senior official at a federal health regulatory agency with direct experience shaping AI and digital health policy. Provides strategic guidance on regulatory trajectory and audit expectations for clinical AI.</p>
-        </div>
-
-        <!-- PLACEHOLDER — replace with real advisor -->
-        <div class="advisory-card">
-          <div class="advisory-initials">—</div>
-          <div class="advisory-name">[Founder & CEO]</div>
-          <div class="advisory-role">Enterprise AI Infrastructure</div>
-          <p class="advisory-bio">Founded and scaled an enterprise AI infrastructure company through Series B. Brings operator perspective on AI deployment realities, vendor landscape, and what governance infrastructure actually looks like in production environments.</p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════════
-       CONTACT
-       NOTE: Form submission is STUBBED — functional UI, no real backend.
-       TODO: Connect to a real form backend before going live.
-             Options: Formspree, a serverless function at /api/contact,
-             or a CRM webhook (HubSpot, Salesforce, etc.)
-  ══════════════════════════════════════ -->
-  <section class="section fade-up" id="contact">
-    <div class="container">
-      <div class="contact-inner">
-        <div>
-          <div class="section-label">Contact</div>
-          <h2 class="display-headline contact-headline">Start with one honest conversation.</h2>
-          <p class="body-copy contact-sub">We're selective about engagements. If your organization is ready to govern AI seriously — and ready to execute, not just plan — we'd like to talk.</p>
-          <div class="contact-detail">
-            <div class="contact-row">
-              <div class="contact-dot"></div>
-              <a href="mailto:hello@asisadvisory.com">hello@asisadvisory.com</a>
-            </div>
-            <div class="contact-row">
-              <div class="contact-dot"></div>
-              <span>Chicago, IL — serving regulated enterprises nationally</span>
-            </div>
-          </div>
-        </div>
-        <div class="contact-form-wrap">
-          <div id="contactFormWrap">
-            <form id="contactForm" novalidate>
-              <div class="form-grid">
-
-                <div class="form-group">
-                  <label class="form-label" for="cName">Name <span class="req">*</span></label>
-                  <input class="form-input" type="text" id="cName" placeholder="Your name" required>
-                  <span class="form-error" id="cNameErr">Required.</span>
-                </div>
-
-                <div class="form-group">
-                  <label class="form-label" for="cEmail">Email <span class="req">*</span></label>
-                  <input class="form-input" type="email" id="cEmail" placeholder="you@company.com" required>
-                  <span class="form-error" id="cEmailErr">Enter a valid email address.</span>
-                </div>
-
-                <div class="form-group form-group--full">
-                  <label class="form-label" for="cCompany">Company <span class="req">*</span></label>
-                  <input class="form-input" type="text" id="cCompany" placeholder="Your organization" required>
-                  <span class="form-error" id="cCompanyErr">Required.</span>
-                </div>
-
-                <div class="form-group form-group--full">
-                  <label class="form-label" for="cInterest">What are you interested in? <span class="req">*</span></label>
-                  <select class="form-select" id="cInterest" required>
-                    <option value="">Select one</option>
-                    <option value="diagnostic">Diagnostic Sprint</option>
-                    <option value="execution">Execution Engagement</option>
-                    <option value="health-check">AI Health Check</option>
-                    <option value="ventures">Venture &amp; Advisory Board</option>
-                    <option value="other">Other / Not Sure Yet</option>
-                  </select>
-                  <span class="form-error" id="cInterestErr">Please select an option.</span>
-                </div>
-
-                <div class="form-group form-group--full">
-                  <label class="form-label" for="cMessage">Message <span class="req">*</span></label>
-                  <textarea class="form-textarea" id="cMessage" rows="4" placeholder="Brief context on your organization and what you're trying to solve." required></textarea>
-                  <span class="form-error" id="cMessageErr">Required.</span>
-                </div>
-
-              </div>
-              <div class="form-submit-row" style="margin-top:24px;">
-                <button type="submit" class="btn-primary" id="contactSubmitBtn">Send Message</button>
-              </div>
-            </form>
-          </div>
-          <div class="form-success" id="contactSuccess" style="display:none;">
-            <div class="form-success-icon">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M4 10l4 4 8-8"/>
-              </svg>
-            </div>
-            <h3>Message received.</h3>
-            <p>We'll follow up within 48 hours. If your need is time-sensitive, email us directly at <a href="mailto:hello@asisadvisory.com" style="color:var(--accent);">hello@asisadvisory.com</a>.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════════
-       FOOTER
-  ══════════════════════════════════════ -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-inner">
-        <div class="footer-logo">Asis <em>Advisory</em></div>
-        <div class="footer-tagline">AI Strategy · Governance · Execution · Chicago, IL</div>
-        <div class="footer-right">
-          <span class="footer-copy">© 2026 Asis Advisory</span>
-          <a href="mailto:hello@asisadvisory.com" class="footer-email">hello@asisadvisory.com</a>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <!-- ══════════════════════════════════════
-       JAVASCRIPT
-  ══════════════════════════════════════ -->
-  <script>
-    /* ── Nav scroll ──────────────────────── */
-    const nav = document.getElementById('nav');
-    window.addEventListener('scroll', () => {
-      nav.classList.toggle('scrolled', window.scrollY > 24);
-    }, { passive: true });
-
-    /* ── Hamburger ───────────────────────── */
-    const hamburger  = document.getElementById('hamburger');
-    const mobileMenu = document.getElementById('mobileMenu');
-    hamburger.addEventListener('click', () => {
-      hamburger.classList.toggle('open');
-      mobileMenu.classList.toggle('open');
-    });
-    function closeMenu() {
-      hamburger.classList.remove('open');
-      mobileMenu.classList.remove('open');
-    }
-
-    /* ── Fade-up observer ────────────────── */
-    const fadeObs = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) { e.target.classList.add('visible'); fadeObs.unobserve(e.target); }
-      });
-    }, { threshold: 0.08, rootMargin: '0px 0px -48px 0px' });
-    document.querySelectorAll('.fade-up').forEach(el => fadeObs.observe(el));
-
-    /* ── Stagger grid children ───────────── */
-    const staggerObs = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (!e.isIntersecting) return;
-        Array.from(e.target.children).forEach((child, i) => {
-          child.style.opacity = '0';
-          child.style.transform = 'translateY(18px)';
-          child.style.transition = `opacity 0.5s ease ${i * 0.08}s, transform 0.5s ease ${i * 0.08}s`;
-          requestAnimationFrame(() => requestAnimationFrame(() => {
-            child.style.opacity = '1';
-            child.style.transform = 'translateY(0)';
-          }));
-        });
-        staggerObs.unobserve(e.target);
-      });
-    }, { threshold: 0.12 });
-    document.querySelectorAll('.services-grid, .tiers-grid, .team-grid, .how-principles, .industries-inner, .advisory-grid')
-      .forEach(el => staggerObs.observe(el));
-
-    /* ── FAQ accordion ───────────────────── */
-    document.querySelectorAll('.faq-item').forEach(item => {
-      const q = item.querySelector('.faq-question');
-      q.addEventListener('click', () => {
-        const isOpen = item.classList.contains('open');
-        // close all others
-        document.querySelectorAll('.faq-item.open').forEach(o => o.classList.remove('open'));
-        if (!isOpen) item.classList.add('open');
-      });
-      q.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); q.click(); }
-      });
-    });
-
-    /* ── Pitch form: char counter ────────── */
-    const pitchText  = document.getElementById('pitchText');
-    const pitchCount = document.getElementById('pitchCount');
-    if (pitchText) {
-      pitchText.addEventListener('input', () => {
-        pitchCount.textContent = pitchText.value.length;
-      });
-    }
-
-    /* ── Validation helpers ──────────────── */
-    function isValidEmail(v) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); }
-    function setError(inputId, errId, show) {
-      const inp = document.getElementById(inputId);
-      const err = document.getElementById(errId);
-      if (!inp || !err) return;
-      inp.classList.toggle('error', show);
-      err.classList.toggle('visible', show);
-    }
-    function clearError(inputId, errId) { setError(inputId, errId, false); }
-
-    /* ── PITCH FORM ──────────────────────── */
-    const pitchForm = document.getElementById('pitchForm');
-    if (pitchForm) {
-      // Clear errors on input
-      ['founderName','founderEmail','companyName','oneLiner','pitchText'].forEach(id => {
-        const el = document.getElementById(id);
-        if (el) el.addEventListener('input', () => clearError(id, id + 'Err'));
-      });
-      ['stage','sector'].forEach(id => {
-        const el = document.getElementById(id);
-        if (el) el.addEventListener('change', () => clearError(id, id + 'Err'));
-      });
-
-      pitchForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        let valid = true;
-
-        const founderName  = document.getElementById('founderName').value.trim();
-        const founderEmail = document.getElementById('founderEmail').value.trim();
-        const companyName  = document.getElementById('companyName').value.trim();
-        const oneLiner     = document.getElementById('oneLiner').value.trim();
-        const stage        = document.getElementById('stage').value;
-        const sector       = document.getElementById('sector').value;
-        const pitchVal     = pitchText.value.trim();
-        const checked      = [...document.querySelectorAll('input[name="interest"]:checked')];
-
-        if (!founderName)               { setError('founderName', 'founderNameErr', true);   valid = false; }
-        if (!isValidEmail(founderEmail)){ setError('founderEmail','founderEmailErr', true);   valid = false; }
-        if (!companyName)               { setError('companyName', 'companyNameErr', true);    valid = false; }
-        if (!oneLiner)                  { setError('oneLiner',    'oneLinerErr',    true);    valid = false; }
-        if (!stage)                     { setError('stage',       'stageErr',       true);    valid = false; }
-        if (!sector)                    { setError('sector',      'sectorErr',      true);    valid = false; }
-        if (!pitchVal)                  { setError('pitchText',   'pitchTextErr',   true);    valid = false; }
-        if (checked.length === 0) {
-          document.getElementById('interestErr').classList.add('visible');
-          valid = false;
-        } else {
-          document.getElementById('interestErr').classList.remove('visible');
-        }
-
-        if (!valid) return;
-
-        // TODO: Connect to form backend before going live.
-        //       Options: Formspree (replace fetch URL with https://formspree.io/f/{id}),
-        //       serverless function at /api/pitch-submit, or CRM webhook.
-        //       IMPORTANT: Submission is currently STUBBED — shows success UI but does NOT send data.
-
-        const btn = document.getElementById('pitchSubmitBtn');
-        btn.textContent = 'Submitting…';
-        btn.disabled = true;
-
-        setTimeout(() => {
-          document.getElementById('pitchFormWrap').style.display = 'none';
-          document.getElementById('pitchSuccess').style.display  = 'block';
-        }, 900);
-      });
-    }
-
-    /* ── CONTACT FORM ────────────────────── */
-    const contactForm = document.getElementById('contactForm');
-    if (contactForm) {
-      ['cName','cEmail','cCompany','cMessage'].forEach(id => {
-        const el = document.getElementById(id);
-        if (el) el.addEventListener('input', () => clearError(id, id + 'Err'));
-      });
-      const cInterestEl = document.getElementById('cInterest');
-      if (cInterestEl) cInterestEl.addEventListener('change', () => clearError('cInterest','cInterestErr'));
-
-      contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        let valid = true;
-
-        const cName     = document.getElementById('cName').value.trim();
-        const cEmail    = document.getElementById('cEmail').value.trim();
-        const cCompany  = document.getElementById('cCompany').value.trim();
-        const cInterest = document.getElementById('cInterest').value;
-        const cMessage  = document.getElementById('cMessage').value.trim();
-
-        if (!cName)               { setError('cName',     'cNameErr',     true); valid = false; }
-        if (!isValidEmail(cEmail)){ setError('cEmail',    'cEmailErr',    true); valid = false; }
-        if (!cCompany)            { setError('cCompany',  'cCompanyErr',  true); valid = false; }
-        if (!cInterest)           { setError('cInterest', 'cInterestErr', true); valid = false; }
-        if (!cMessage)            { setError('cMessage',  'cMessageErr',  true); valid = false; }
-
-        if (!valid) return;
-
-        // TODO: Connect to form backend before going live.
-        //       Options: Formspree, serverless function at /api/contact, or CRM webhook.
-        //       IMPORTANT: Submission is currently STUBBED — shows success UI but does NOT send data.
-
-        const btn = document.getElementById('contactSubmitBtn');
-        btn.textContent = 'Sending…';
-        btn.disabled = true;
-
-        setTimeout(() => {
-          document.getElementById('contactFormWrap').style.display = 'none';
-          document.getElementById('contactSuccess').style.display  = 'block';
-        }, 800);
-      });
-    }
-  </script>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="fl">Asis<span>.</span>Advisory</div>
+  <div class="flinks">
+    <a href="#services">Services</a>
+    <a href="#industries">Industries</a>
+    <a href="#how">How We Work</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+    <a href="https://regulatedintelligence.substack.com" target="_blank">Newsletter</a>
+  </div>
+  <div class="fr">© 2026 Asis Advisory LLC &nbsp;·&nbsp; Chicago, IL</div>
+</footer>
+
+<script>
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('sc',window.scrollY>50));
+window.addEventListener('load',()=>{
+  const h=document.getElementById('hu');
+  if(h)setTimeout(()=>h.classList.add('on'),350);
+});
+function handleSend(){
+  const n=document.getElementById('fn').value.trim();
+  const c=document.getElementById('fc').value.trim();
+  const r=document.getElementById('fr').value.trim();
+  const i=document.getElementById('fi').value;
+  const m=document.getElementById('fm').value.trim();
+  const e=document.getElementById('fe').value.trim();
+  if(!n||!e||!m){alert('Please fill in your name, email, and message.');return;}
+  const sub=encodeURIComponent('Asis Advisory Inquiry — '+(c||n));
+  const bod=encodeURIComponent('Name: '+n+'\nCompany: '+c+'\nRole: '+r+'\nIndustry: '+i+'\nEmail: '+e+'\n\nMessage:\n'+m);
+  window.location.href='mailto:hello@asisadvisory.com?subject='+sub+'&body='+bod;
+  document.getElementById('cfForm').style.display='none';
+  document.getElementById('cfSuc').style.display='block';
+}
+</script>
 </body>
 </html>

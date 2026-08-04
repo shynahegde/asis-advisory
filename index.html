@@ -43,7 +43,7 @@ nav.sc{background:rgba(12,26,50,.96);backdrop-filter:blur(16px);box-shadow:0 1px
 .hero{min-height:100vh;background:var(--navy);position:relative;display:flex;align-items:center;padding:140px 64px 100px;overflow:hidden}
 .hero-dot{position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,.055) 1px,transparent 1px);background-size:30px 30px;pointer-events:none}
 .hero-glow{position:absolute;top:-200px;right:-100px;width:600px;height:600px;background:radial-gradient(circle,rgba(200,96,42,.12) 0%,transparent 65%);pointer-events:none}
-.hero-in{max-width:1080px;margin:0 auto;width:100%;position:relative;z-index:1}
+.hero-in{max-width:1200px;margin:0 auto;width:100%;position:relative;z-index:1;display:grid;grid-template-columns:1.1fr 0.9fr;gap:24px;align-items:center}
 .eyebrow{font-family:var(--bd);font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--ember);margin-bottom:24px}
 .hero h1{font-family:var(--gd);font-size:clamp(40px,5.2vw,72px);font-weight:700;color:#fff;line-height:1.07;letter-spacing:-1.5px;max-width:820px;margin-bottom:28px}
 .hu{position:relative;display:inline}
@@ -58,6 +58,34 @@ nav.sc{background:rgba(12,26,50,.96);backdrop-filter:blur(16px);box-shadow:0 1px
 .hstats{display:flex;gap:56px;flex-wrap:wrap}
 .sn{display:block;font-family:var(--gd);font-size:34px;font-weight:700;color:#fff;letter-spacing:-1px;line-height:1}
 .sl{display:block;font-family:var(--bd);font-size:13px;color:rgba(255,255,255,.38);margin-top:6px}
+
+/* HERO VISUAL — network / circuit graphic */
+.hero-visual{position:relative;display:flex;align-items:center;justify-content:center;height:540px}
+.hv-stage{position:relative;width:400px;height:480px}
+.hv-blob{position:absolute;inset:0;border-radius:42% 58% 65% 35% / 55% 45% 58% 42%;background:linear-gradient(155deg,var(--navy2) 0%,#0e2038 55%,var(--navy) 100%);border:1px solid rgba(255,255,255,.08);box-shadow:0 40px 90px -24px rgba(0,0,0,.55),0 0 130px -30px rgba(200,96,42,.35);overflow:hidden}
+.hv-blob::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,.06) 1px,transparent 1px);background-size:22px 22px;opacity:.6}
+.hv-ring{position:absolute;top:50%;left:50%;border-radius:50%;border:1px solid rgba(200,96,42,.28);transform:translate(-50%,-50%);pointer-events:none}
+.hv-ring.r1{width:170px;height:170px;animation:hv-spin 22s linear infinite}
+.hv-ring.r2{width:230px;height:230px;border-color:rgba(255,255,255,.08);animation:hv-spin 34s linear infinite reverse}
+@keyframes hv-spin{from{transform:translate(-50%,-50%) rotate(0deg)}to{transform:translate(-50%,-50%) rotate(360deg)}}
+.hv-svg{position:absolute;inset:0;width:100%;height:100%}
+.hv-svg line{stroke:rgba(255,255,255,.16);stroke-width:1}
+.hv-svg .nn-core{fill:var(--ember)}
+.hv-svg .nn-mid{fill:rgba(255,255,255,.6)}
+.hv-svg .nn-outer{fill:rgba(255,255,255,.3)}
+.hv-svg .nn-pulse{fill:var(--ember2)}
+.hv-svg .nn-core,.hv-svg .nn-pulse{animation:hv-pulse 2.6s ease-in-out infinite}
+.hv-svg .nn-pulse:nth-of-type(2){animation-delay:.4s}
+.hv-svg .nn-pulse:nth-of-type(3){animation-delay:.9s}
+.hv-svg .nn-pulse:nth-of-type(4){animation-delay:1.4s}
+@keyframes hv-pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.55;transform:scale(1.35)}}
+.hv-chip{position:absolute;background:rgba(21,39,70,.96);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:10px 14px;box-shadow:0 14px 34px -10px rgba(0,0,0,.5);z-index:2;white-space:nowrap}
+.hv-chip.c1{top:24px;left:-28px}
+.hv-chip.c2{bottom:36px;right:-28px}
+.hv-ct{font-size:9px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:4px}
+.hv-cv{font-family:var(--gd);font-size:14px;font-weight:700;color:#fff;display:flex;align-items:center;gap:6px}
+.hv-dot{width:7px;height:7px;border-radius:50%;background:var(--sage);box-shadow:0 0 0 3px rgba(46,125,99,.25)}
+@media(max-width:960px){.hero-visual{display:none}.hero-in{grid-template-columns:1fr}}
 
 /* SECTION BASE */
 section{padding:96px 64px}
@@ -87,8 +115,10 @@ section{padding:96px 64px}
 .sc-card{background:var(--white);padding:44px 36px;transition:background .28s,color .28s;cursor:default}
 .sc-card:hover{background:var(--navy)}
 .snum{font-family:var(--gd);font-size:12px;font-weight:500;color:var(--ember);letter-spacing:1.5px;margin-bottom:22px;display:block}
-.sico{width:46px;height:46px;background:var(--canvas);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:22px;font-size:22px;transition:background .28s}
+.sico{width:46px;height:46px;background:var(--canvas);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:22px;transition:background .28s}
+.sico svg{width:23px;height:23px;stroke:var(--ember);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;transition:stroke .28s}
 .sc-card:hover .sico{background:rgba(200,96,42,.14)}
+.sc-card:hover .sico svg{stroke:#fff}
 .stitle{font-family:var(--gd);font-size:25px;font-weight:700;color:var(--navy);letter-spacing:-.4px;margin-bottom:6px;transition:color .28s}
 .sc-card:hover .stitle{color:#fff}
 .ssub{font-size:13px;font-weight:500;color:var(--ember);margin-bottom:14px;transition:color .28s}
@@ -104,8 +134,21 @@ section{padding:96px 64px}
 .indi-g{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:0}
 .ic{background:var(--white);border:1px solid #E0E4EE;border-radius:6px;padding:28px 20px;text-align:center;transition:transform .2s,box-shadow .2s,border-color .2s}
 .ic:hover{transform:translateY(-4px);box-shadow:0 14px 40px rgba(12,26,50,.10);border-color:#CDD3E2}
-.ii{font-size:28px;margin-bottom:10px;display:block}
+.ic:hover .ii svg{stroke:var(--ember2)}
+.ii{width:40px;height:40px;margin:0 auto 12px;display:flex;align-items:center;justify-content:center}
+.ii svg{width:26px;height:26px;stroke:var(--ember);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;transition:stroke .2s}
 .in{font-family:var(--gd);font-size:14px;font-weight:600;color:var(--navy);line-height:1.3}
+
+/* TRUST BAND */
+.trust-s{background:var(--navy);position:relative;overflow:hidden;padding:80px 64px}
+.trust-s svg.circuit-bg{position:absolute;inset:0;width:100%;height:100%;opacity:.5}
+.trust-in{max-width:900px;margin:0 auto;text-align:center;position:relative;z-index:1}
+.trust-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(200,96,42,.12);border:1px solid rgba(200,96,42,.3);color:var(--ember2);font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;padding:8px 18px;border-radius:999px;margin-bottom:32px}
+.trust-q{font-family:var(--gd);font-size:clamp(24px,3vw,36px);font-weight:500;color:#fff;line-height:1.35;letter-spacing:-.5px;margin-bottom:24px}
+.trust-q span{color:var(--ember2)}
+.trust-a{font-size:14px;color:rgba(255,255,255,.42);font-weight:500}
+.trust-a b{color:rgba(255,255,255,.7);font-weight:600}
+@media(max-width:960px){.trust-s{padding:64px 28px}}
 
 /* HOW */
 .how-s{background:var(--navy);position:relative;overflow:hidden}
@@ -206,17 +249,83 @@ footer{background:var(--navy);padding:44px 64px;display:flex;align-items:center;
   <div class="hero-dot"></div>
   <div class="hero-glow"></div>
   <div class="hero-in">
-    <div class="eyebrow">Enterprise AI Advisory &nbsp;·&nbsp; Chicago, IL</div>
-    <h1>AI Transformation for Industries That Can't Afford to Get It <span class="hu" id="hu">Wrong.</span></h1>
-    <p>Asis Advisory is your end-to-end AI partner — from governance and strategy to engineering and scale. Purpose-built for regulated enterprises.</p>
-    <div class="ha">
-      <a href="#contact" class="bp">Start the Conversation</a>
-      <a href="#services" class="bg">See how we work →</a>
+    <div class="hero-copy">
+      <div class="eyebrow">Enterprise AI Advisory &nbsp;·&nbsp; Chicago, IL</div>
+      <h1>AI Transformation for Industries That Can't Afford to Get It <span class="hu" id="hu">Wrong.</span></h1>
+      <p>Asis Advisory is your end-to-end AI partner — from governance and strategy to engineering and scale. Purpose-built for regulated enterprises.</p>
+      <div class="ha">
+        <a href="#contact" class="bp">Start the Conversation</a>
+        <a href="#services" class="bg">See how we work →</a>
+      </div>
+      <div class="hstats">
+        <div><span class="sn">140K+</span><span class="sl">Enterprise employees impacted</span></div>
+        <div><span class="sn">20 yrs</span><span class="sl">Regulated industry expertise</span></div>
+        <div><span class="sn">Fortune 50</span><span class="sl">Enterprise track record</span></div>
+      </div>
     </div>
-    <div class="hstats">
-      <div><span class="sn">140K+</span><span class="sl">Enterprise employees impacted</span></div>
-      <div><span class="sn">20 yrs</span><span class="sl">Regulated industry expertise</span></div>
-      <div><span class="sn">Fortune 50</span><span class="sl">Enterprise track record</span></div>
+    <div class="hero-visual" aria-hidden="true">
+      <div class="hv-stage">
+      <div class="hv-blob">
+        <div class="hv-ring r1"></div>
+        <div class="hv-ring r2"></div>
+        <svg class="hv-svg" viewBox="0 0 420 500" preserveAspectRatio="xMidYMid meet">
+          <line x1="210" y1="235" x2="279.0" y2="257.4" />
+          <line x1="210" y1="235" x2="232.8" y2="296.0" />
+          <line x1="210" y1="235" x2="176.8" y2="295.4" />
+          <line x1="210" y1="235" x2="145.2" y2="245.2" />
+          <line x1="210" y1="235" x2="156.0" y2="182.3" />
+          <line x1="210" y1="235" x2="215.5" y2="158.7" />
+          <line x1="210" y1="235" x2="273.1" y2="189.9" />
+          <line x1="279.0" y1="257.4" x2="319.4" y2="321.1" />
+          <line x1="232.8" y1="296.0" x2="265.5" y2="386.1" />
+          <line x1="176.8" y1="295.4" x2="187.6" y2="383.3" />
+          <line x1="176.8" y1="295.4" x2="117.6" y2="350.7" />
+          <line x1="145.2" y1="245.2" x2="69.6" y2="277.4" />
+          <line x1="156.0" y1="182.3" x2="85.6" y2="188.5" />
+          <line x1="156.0" y1="182.3" x2="124.0" y2="113.9" />
+          <line x1="215.5" y1="158.7" x2="193.0" y2="64.2" />
+          <line x1="215.5" y1="158.7" x2="274.6" y2="84.0" />
+          <line x1="273.1" y1="189.9" x2="327.0" y2="153.9" />
+          <line x1="279.0" y1="257.4" x2="357.6" y2="239.9" />
+          <line x1="265.5" y1="386.1" x2="187.6" y2="383.3" />
+          <line x1="69.6" y1="277.4" x2="85.6" y2="188.5" />
+          <line x1="85.6" y1="188.5" x2="124.0" y2="113.9" />
+          <line x1="193.0" y1="64.2" x2="274.6" y2="84.0" />
+          <line x1="274.6" y1="84.0" x2="327.0" y2="153.9" />
+          <line x1="327.0" y1="153.9" x2="357.6" y2="239.9" />
+          <line x1="145.2" y1="245.2" x2="156.0" y2="182.3" />
+          <line x1="215.5" y1="158.7" x2="273.1" y2="189.9" />
+          <line x1="273.1" y1="189.9" x2="279.0" y2="257.4" />
+          <circle cx="210" cy="235" r="7" class="nn-core" />
+          <circle cx="279.0" cy="257.4" r="3.6" class="nn-mid" />
+          <circle cx="232.8" cy="296.0" r="3.6" class="nn-mid" />
+          <circle cx="176.8" cy="295.4" r="4.5" class="nn-pulse" />
+          <circle cx="145.2" cy="245.2" r="3.6" class="nn-mid" />
+          <circle cx="156.0" cy="182.3" r="3.6" class="nn-mid" />
+          <circle cx="215.5" cy="158.7" r="3.6" class="nn-mid" />
+          <circle cx="273.1" cy="189.9" r="3.6" class="nn-mid" />
+          <circle cx="319.4" cy="321.1" r="2.8" class="nn-outer" />
+          <circle cx="265.5" cy="386.1" r="4.5" class="nn-pulse" />
+          <circle cx="187.6" cy="383.3" r="2.8" class="nn-outer" />
+          <circle cx="117.6" cy="350.7" r="2.8" class="nn-outer" />
+          <circle cx="69.6" cy="277.4" r="2.8" class="nn-outer" />
+          <circle cx="85.6" cy="188.5" r="2.8" class="nn-outer" />
+          <circle cx="124.0" cy="113.9" r="4.5" class="nn-pulse" />
+          <circle cx="193.0" cy="64.2" r="2.8" class="nn-outer" />
+          <circle cx="274.6" cy="84.0" r="2.8" class="nn-outer" />
+          <circle cx="327.0" cy="153.9" r="2.8" class="nn-outer" />
+          <circle cx="357.6" cy="239.9" r="2.8" class="nn-outer" />
+        </svg>
+      </div>
+      <div class="hv-chip c1">
+        <div class="hv-ct">Compliance</div>
+        <div class="hv-cv">HIPAA · FDA · SOX</div>
+      </div>
+      <div class="hv-chip c2">
+        <div class="hv-ct">Model Risk</div>
+        <div class="hv-cv"><span class="hv-dot"></span>Governed &amp; Monitored</div>
+      </div>
+      </div>
     </div>
   </div>
 </section>
@@ -276,7 +385,7 @@ footer{background:var(--navy);padding:44px 64px;display:flex;align-items:center;
     <div class="sg">
       <div class="sc-card">
         <span class="snum">01</span>
-        <div class="sico">🧭</div>
+        <div class="sico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M15.3 8.7l-2.1 5.1-5.1 2.1 2.1-5.1 5.1-2.1z"/></svg></div>
         <div class="stitle">Advise</div>
         <div class="ssub">AI Strategy &amp; Governance</div>
         <p class="sdesc">We assess your AI readiness, map regulatory exposure, and design a governance architecture that scales with your ambition — not against it. No discovery theater. Just clear decisions and a path forward.</p>
@@ -290,7 +399,7 @@ footer{background:var(--navy);padding:44px 64px;display:flex;align-items:center;
       </div>
       <div class="sc-card">
         <span class="snum">02</span>
-        <div class="sico">⚙️</div>
+        <div class="sico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.2"/><circle cx="12" cy="12" r="7.6"/><line x1="12" y1="2.6" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="21.4"/><line x1="21.4" y1="12" x2="19" y2="12"/><line x1="5" y1="12" x2="2.6" y2="12"/><line x1="18.6" y1="5.4" x2="16.9" y2="7.1"/><line x1="7.1" y1="16.9" x2="5.4" y2="18.6"/><line x1="18.6" y1="18.6" x2="16.9" y2="16.9"/><line x1="7.1" y1="7.1" x2="5.4" y2="5.4"/></svg></div>
         <div class="stitle">Build</div>
         <div class="ssub">AI Engineering &amp; Products</div>
         <p class="sdesc">Outcome-based engineering squads that ship production-grade AI — faster and more affordably than any internal team. You pay for features delivered, not hours logged.</p>
@@ -304,7 +413,7 @@ footer{background:var(--navy);padding:44px 64px;display:flex;align-items:center;
       </div>
       <div class="sc-card">
         <span class="snum">03</span>
-        <div class="sico">🚀</div>
+        <div class="sico"><svg viewBox="0 0 24 24" stroke-linecap="butt"><rect x="3.5" y="14" width="3.4" height="6.5" rx="1"/><rect x="10.3" y="9.5" width="3.4" height="11" rx="1"/><rect x="17.1" y="3.5" width="3.4" height="17" rx="1"/></svg></div>
         <div class="stitle">Scale</div>
         <div class="ssub">AI CoE &amp; Org Transformation</div>
         <p class="sdesc">We don't just deploy AI — we build the organizations capable of sustaining it. From CoE design to change management to FinOps, we set you up to own it long after we're gone.</p>
@@ -327,12 +436,51 @@ footer{background:var(--navy);padding:44px 64px;display:flex;align-items:center;
     <h2 class="st">Where the stakes are highest.</h2>
     <p class="ss">We specialize in industries where AI errors carry real consequences — and where governance isn't optional, it's existential.</p>
     <div class="indi-g">
-      <div class="ic"><span class="ii">🏥</span><div class="in">Healthcare Systems &amp; Payers</div></div>
-      <div class="ic"><span class="ii">🔬</span><div class="in">Medical Devices &amp; Diagnostics</div></div>
-      <div class="ic"><span class="ii">💊</span><div class="in">Pharma &amp; Life Sciences</div></div>
-      <div class="ic"><span class="ii">🏦</span><div class="in">Financial Services</div></div>
-      <div class="ic"><span class="ii">🏭</span><div class="in">Manufacturing &amp; Supply Chain</div></div>
+      <div class="ic">
+        <div class="ii"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/><path d="M12 8.3v7.4M8.3 12h7.4"/></svg></div>
+        <div class="in">Healthcare Systems &amp; Payers</div>
+      </div>
+      <div class="ic">
+        <div class="ii"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.2"/><path d="M4 12h3l1.6-3.4 3 7 2-5.4 1.3 1.8H20"/></svg></div>
+        <div class="in">Medical Devices &amp; Diagnostics</div>
+      </div>
+      <div class="ic">
+        <div class="ii"><svg viewBox="0 0 24 24"><g transform="rotate(-40 12 12)"><rect x="4" y="9" width="16" height="6" rx="3"/><line x1="12" y1="9" x2="12" y2="15"/></g></svg></div>
+        <div class="in">Pharma &amp; Life Sciences</div>
+      </div>
+      <div class="ic">
+        <div class="ii"><svg viewBox="0 0 24 24"><path d="M3 9.5l9-5 9 5"/><line x1="4" y1="9.5" x2="20" y2="9.5"/><line x1="5.5" y1="9.5" x2="5.5" y2="18"/><line x1="9.5" y1="9.5" x2="9.5" y2="18"/><line x1="14.5" y1="9.5" x2="14.5" y2="18"/><line x1="18.5" y1="9.5" x2="18.5" y2="18"/><line x1="3.5" y1="20" x2="20.5" y2="20"/></svg></div>
+        <div class="in">Financial Services</div>
+      </div>
+      <div class="ic">
+        <div class="ii"><svg viewBox="0 0 24 24"><path d="M3.5 20V11l4.8 3.2V11l4.8 3.2V11l6.4-4v13H3.5z"/><line x1="3.5" y1="20" x2="20.5" y2="20"/></svg></div>
+        <div class="in">Manufacturing &amp; Supply Chain</div>
+      </div>
     </div>
+  </div>
+</section>
+
+<!-- TRUST BAND -->
+<section class="trust-s">
+  <svg class="circuit-bg" viewBox="0 0 1200 500" preserveAspectRatio="none" aria-hidden="true">
+    <defs>
+      <pattern id="circuit" width="120" height="120" patternUnits="userSpaceOnUse">
+        <path d="M0 60h40M80 60h40M60 0v40M60 80v40" stroke="rgba(255,255,255,.07)" stroke-width="1"/>
+        <path d="M40 60h20v-20" stroke="rgba(255,255,255,.07)" stroke-width="1" fill="none"/>
+        <path d="M60 80v-20h20" stroke="rgba(255,255,255,.07)" stroke-width="1" fill="none"/>
+        <circle cx="60" cy="60" r="3" fill="rgba(200,96,42,.35)"/>
+        <circle cx="0" cy="60" r="2" fill="rgba(255,255,255,.12)"/>
+        <circle cx="120" cy="60" r="2" fill="rgba(255,255,255,.12)"/>
+        <circle cx="60" cy="0" r="2" fill="rgba(255,255,255,.12)"/>
+        <circle cx="60" cy="120" r="2" fill="rgba(255,255,255,.12)"/>
+      </pattern>
+    </defs>
+    <rect width="1200" height="500" fill="url(#circuit)"/>
+  </svg>
+  <div class="trust-in">
+    <div class="trust-badge">Built For High-Stakes AI</div>
+    <p class="trust-q">"When AI touches <span>patient care</span> or <span>financial data</span>, governance isn't a checkbox after the build — it's the foundation the build stands on."</p>
+    <p class="trust-a"><b>Founder &amp; Principal</b>, Asis Advisory — formerly Fortune 50 AI &amp; Governance Executive</p>
   </div>
 </section>
 
@@ -381,7 +529,7 @@ footer{background:var(--navy);padding:44px 64px;display:flex;align-items:center;
         <p style="font-size:16px;color:var(--slate);line-height:1.72;margin-bottom:20px">Asis Advisory was founded by a former Fortune 50 AI executive who built an enterprise AI Center of Excellence from scratch — deploying governance frameworks, engineering infrastructure, and change management programs across 140,000+ employees in a regulated healthcare environment.</p>
         <p style="font-size:16px;color:var(--slate);line-height:1.72;margin-bottom:20px">We know what it feels like to sit in the chair our clients sit in — navigating board rooms, compliance reviews, union sensitivities, and "not yet" conversations. That's what makes us different from any consulting firm that has only ever advised from the outside.</p>
         <p style="font-size:16px;color:var(--slate);line-height:1.72;margin-bottom:32px">When we say we've done this at scale, we mean it.</p>
-        <p style="font-size:14px;color:var(--slate2)">📍 Chicago, IL &nbsp;·&nbsp; Women-Led &nbsp;·&nbsp; T200 Member &nbsp;·&nbsp; WLA</p>
+        <p style="font-size:14px;color:var(--slate2);display:flex;align-items:center;gap:6px"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><path d="M12 21s7-7.8 7-12.5a7 7 0 10-14 0C5 13.2 12 21 12 21z"/><circle cx="12" cy="8.5" r="2.4"/></svg> Chicago, IL &nbsp;·&nbsp; Women-Led &nbsp;·&nbsp; T200 Member &nbsp;·&nbsp; WLA</p>
       </div>
       <div class="ap">
         <div class="apc"><div class="apn">140K+</div><div class="apl">Enterprise employees impacted through AI deployments</div></div>
@@ -419,7 +567,7 @@ footer{background:var(--navy);padding:44px 64px;display:flex;align-items:center;
         </div>
         <div class="sbar">
           <a href="https://linkedin.com/company/asis-advisory" class="sl-a" target="_blank" title="LinkedIn Company Page">in</a>
-          <a href="https://linkedin.com/in/shyna" class="sl-a" target="_blank" title="Founder LinkedIn">🔗</a>
+          <a href="https://linkedin.com/in/shyna" class="sl-a" target="_blank" title="Founder LinkedIn"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><path d="M10.5 13.5l3-3M7 17L17 7M13 7h4v4"/></svg></a>
           <a href="https://regulatedintelligence.substack.com" class="sl-a" target="_blank" title="Substack Newsletter">S</a>
         </div>
       </div>

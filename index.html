@@ -116,7 +116,7 @@ section{padding:96px 64px}
 
 /* INDUSTRIES */
 .ind-s{background:var(--canvas)}
-.indi-g{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:0}
+.indi-g{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:0}
 .ic{background:var(--white);border:1px solid #E0E4EE;border-radius:6px;padding:28px 20px;text-align:center;transition:transform .2s,box-shadow .2s,border-color .2s}
 .ic:hover{transform:translateY(-4px);box-shadow:0 14px 40px rgba(12,26,50,.10);border-color:#CDD3E2}
 .ic:hover .ii svg{stroke:var(--ember2)}
@@ -134,6 +134,17 @@ section{padding:96px 64px}
 .trust-a{font-size:14px;color:rgba(255,255,255,.42);font-weight:500}
 .trust-a b{color:rgba(255,255,255,.7);font-weight:600}
 @media(max-width:960px){.trust-s{padding:64px 28px}}
+
+/* FRAMEWORK / PILLARS */
+.fw-s{background:var(--white)}
+.fw-g{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:0}
+.pil{background:var(--canvas);border-radius:8px;padding:32px 26px;border-left:3px solid var(--ember)}
+.pil-ico{width:44px;height:44px;background:var(--white);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;box-shadow:0 1px 2px rgba(12,26,50,.06)}
+.pil-ico svg{width:21px;height:21px;stroke:var(--ember);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.pil-n{font-family:var(--gd);font-size:20px;font-weight:700;color:var(--navy);letter-spacing:-.3px;margin-bottom:5px}
+.pil-t{font-size:12.5px;font-weight:600;color:var(--ember);margin-bottom:12px}
+.pil-d{font-size:14px;color:var(--slate);line-height:1.62}
+@media(max-width:960px){.fw-g{grid-template-columns:1fr 1fr}}
 
 /* HOW */
 .how-s{background:var(--navy);position:relative;overflow:hidden}
@@ -223,6 +234,7 @@ footer{background:var(--navy);padding:44px 64px;display:flex;align-items:center;
   <div class="nlinks">
     <a href="#services">Services</a>
     <a href="#industries">Industries</a>
+    <a href="#framework">Framework</a>
     <a href="#how">How We Work</a>
     <a href="#about">About</a>
     <a href="#contact" class="ncta">Get Started</a>
@@ -236,17 +248,17 @@ footer{background:var(--navy);padding:44px 64px;display:flex;align-items:center;
   <div class="hero-glow"></div>
   <div class="hero-in">
     <div class="hero-copy">
-      <div class="eyebrow">Enterprise AI Advisory &nbsp;·&nbsp; Chicago, IL</div>
-      <h1>AI Transformation for Industries That Can't Afford to Get It <span class="hu" id="hu">Wrong.</span></h1>
-      <p>Asis Advisory is your end-to-end AI partner — from governance and strategy to engineering and scale. Purpose-built for regulated enterprises.</p>
+      <div class="eyebrow">Zero-Nonsense AI Advisory &nbsp;·&nbsp; Chicago, IL</div>
+      <h1>We Build AI For People Who Can't Afford to Get It <span class="hu" id="hu">Wrong.</span></h1>
+      <p>Strategy, build, and scale — under one roof, one team, zero excuses. Built for hospitals, banks, and anyone else who can't just "move fast and break things."</p>
       <div class="ha">
-        <a href="#contact" class="bp">Start the Conversation</a>
-        <a href="#services" class="bg">See how we work →</a>
+        <a href="#contact" class="bp">Let's Talk AI</a>
+        <a href="#services" class="bg">See the playbook →</a>
       </div>
       <div class="hstats">
-        <div><span class="sn">140K+</span><span class="sl">Enterprise employees impacted</span></div>
-        <div><span class="sn">20 yrs</span><span class="sl">Regulated industry expertise</span></div>
-        <div><span class="sn">Fortune 50</span><span class="sl">Enterprise track record</span></div>
+        <div><span class="sn">140K+</span><span class="sl">Employees through real AI rollouts</span></div>
+        <div><span class="sn">20 yrs</span><span class="sl">In the trenches of regulated industries</span></div>
+        <div><span class="sn">Fortune 50</span><span class="sl">Battle-tested at enterprise scale</span></div>
       </div>
     </div>
   </div>
@@ -255,41 +267,41 @@ footer{background:var(--navy);padding:44px 64px;display:flex;align-items:center;
 <!-- THE GAP -->
 <section class="gap-s" id="why">
   <div class="si">
-    <div class="se">The Market Gap</div>
-    <h2 class="st">The gap no one has filled. Until now.</h2>
-    <p class="ss">Most AI firms offer strategy without execution, or engineering without governance. Regulated industries need both — from someone who's done it at scale from the inside.</p>
+    <div class="se">Nobody Else Does This</div>
+    <h2 class="st">Big Consulting talks. Dev shops build. We do both — and we don't vanish after the invoice.</h2>
+    <p class="ss">Most AI firms pick a lane: strategy without delivery, or code without governance. Regulated industries need both — from people who've actually sat in your seat.</p>
     <div class="gg">
       <div class="gc">
         <div class="gct">Big Consulting</div>
         <div class="gcn">Strategy Without Delivery</div>
         <ul class="gl">
-          <li>18-month timelines, minimal output</li>
-          <li>200-slide decks, no implementation</li>
-          <li>Offshore delivery, no accountability</li>
-          <li>No regulatory depth</li>
-          <li>Strategy ends when the contract ends</li>
+          <li>18 months, one deck, zero shipped code</li>
+          <li>200 slides, no implementation</li>
+          <li>Offshore team, no one to call</li>
+          <li>Doesn't know what HIPAA stands for</li>
+          <li>Ghosts you the day the contract ends</li>
         </ul>
       </div>
       <div class="gc f">
         <div class="gct">Asis Advisory</div>
         <div class="gcn" style="color:#fff">Governed. Built. Scaled.</div>
         <ul class="gl">
-          <li>End-to-end ownership — advise through scale</li>
-          <li>Governance-first engineering that ships</li>
-          <li>HIPAA, FDA &amp; SOX compliance built in</li>
-          <li>Chicago-based, enterprise-grade team</li>
-          <li>Startup speed. Regulated industry standards.</li>
+          <li>We advise it, then we actually build it</li>
+          <li>Governance baked in, not bolted on</li>
+          <li>Fluent in HIPAA, FDA &amp; SOX</li>
+          <li>Real team, real Chicago office</li>
+          <li>Startup speed, enterprise nerves of steel</li>
         </ul>
       </div>
       <div class="gc">
         <div class="gct">Dev Shops &amp; AI Startups</div>
         <div class="gcn">Engineering Without Governance</div>
         <ul class="gl">
-          <li>No regulatory or compliance expertise</li>
-          <li>Can't pass an audit or a HIPAA review</li>
-          <li>No change management capability</li>
-          <li>No org design or CoE experience</li>
-          <li>No enterprise trust or track record</li>
+          <li>Never heard of a compliance review</li>
+          <li>One audit and the whole thing unravels</li>
+          <li>Change management? Never heard of her</li>
+          <li>No idea what a CoE even is</li>
+          <li>You're their first enterprise client. Yikes.</li>
         </ul>
       </div>
     </div>
@@ -301,16 +313,16 @@ footer{background:var(--navy);padding:44px 64px;display:flex;align-items:center;
 <!-- SERVICES -->
 <section class="svs" id="services">
   <div class="si">
-    <div class="se">What We Do</div>
-    <h2 class="st">Three ways we partner with you.</h2>
-    <p class="ss">Every engagement starts with governance and ends with a functioning, self-sufficient organization. No handoffs, no gaps, no 200-slide decks.</p>
+    <div class="se">How We Help</div>
+    <h2 class="st">Advise. Build. Scale. Pick your entry point.</h2>
+    <p class="ss">Every engagement starts with governance and ends with you not needing us anymore. No handoffs. No gaps. No 200-slide decks nobody reads.</p>
     <div class="sg">
       <div class="sc-card">
         <span class="snum">01</span>
         <div class="sico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M15.3 8.7l-2.1 5.1-5.1 2.1 2.1-5.1 5.1-2.1z"/></svg></div>
         <div class="stitle">Advise</div>
         <div class="ssub">AI Strategy &amp; Governance</div>
-        <p class="sdesc">We assess your AI readiness, map regulatory exposure, and design a governance architecture that scales with your ambition — not against it. No discovery theater. Just clear decisions and a path forward.</p>
+        <p class="sdesc">We map your risk, size your opportunity, and hand you a governance architecture that scales with you — not against you. No discovery theater. Just decisions.</p>
         <ul class="sf">
           <li>AI readiness &amp; use-case audit</li>
           <li>CAGE governance framework design</li>
@@ -324,7 +336,7 @@ footer{background:var(--navy);padding:44px 64px;display:flex;align-items:center;
         <div class="sico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.2"/><circle cx="12" cy="12" r="7.6"/><line x1="12" y1="2.6" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="21.4"/><line x1="21.4" y1="12" x2="19" y2="12"/><line x1="5" y1="12" x2="2.6" y2="12"/><line x1="18.6" y1="5.4" x2="16.9" y2="7.1"/><line x1="7.1" y1="16.9" x2="5.4" y2="18.6"/><line x1="18.6" y1="18.6" x2="16.9" y2="16.9"/><line x1="7.1" y1="7.1" x2="5.4" y2="5.4"/></svg></div>
         <div class="stitle">Build</div>
         <div class="ssub">AI Engineering &amp; Products</div>
-        <p class="sdesc">Outcome-based engineering squads that ship production-grade AI — faster and more affordably than any internal team. You pay for features delivered, not hours logged.</p>
+        <p class="sdesc">Engineering squads that ship real, production-grade AI — faster and cheaper than hiring your own team. You pay for what ships, not hours logged.</p>
         <ul class="sf">
           <li>Custom AI/ML development</li>
           <li>Agent frameworks &amp; RAG pipelines</li>
@@ -338,7 +350,7 @@ footer{background:var(--navy);padding:44px 64px;display:flex;align-items:center;
         <div class="sico"><svg viewBox="0 0 24 24" stroke-linecap="butt"><rect x="3.5" y="14" width="3.4" height="6.5" rx="1"/><rect x="10.3" y="9.5" width="3.4" height="11" rx="1"/><rect x="17.1" y="3.5" width="3.4" height="17" rx="1"/></svg></div>
         <div class="stitle">Scale</div>
         <div class="ssub">AI CoE &amp; Org Transformation</div>
-        <p class="sdesc">We don't just deploy AI — we build the organizations capable of sustaining it. From CoE design to change management to FinOps, we set you up to own it long after we're gone.</p>
+        <p class="sdesc">Deploying AI is easy. Sustaining it is the hard part. We build the org, the governance council, and the muscle memory — so it outlives us.</p>
         <ul class="sf">
           <li>AI Center of Excellence setup</li>
           <li>Governance council &amp; AIGC design</li>
@@ -356,7 +368,7 @@ footer{background:var(--navy);padding:44px 64px;display:flex;align-items:center;
   <div class="si">
     <div class="se">Industries</div>
     <h2 class="st">Where the stakes are highest.</h2>
-    <p class="ss">We specialize in industries where AI errors carry real consequences — and where governance isn't optional, it's existential.</p>
+    <p class="ss">We work where AI mistakes actually cost something — a diagnosis, a dollar, a brand. Governance isn't a nice-to-have here. It's existential.</p>
     <div class="indi-g">
       <div class="ic">
         <div class="ii"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/><path d="M12 8.3v7.4M8.3 12h7.4"/></svg></div>
@@ -377,6 +389,14 @@ footer{background:var(--navy);padding:44px 64px;display:flex;align-items:center;
       <div class="ic">
         <div class="ii"><svg viewBox="0 0 24 24"><path d="M3.5 20V11l4.8 3.2V11l4.8 3.2V11l6.4-4v13H3.5z"/><line x1="3.5" y1="20" x2="20.5" y2="20"/></svg></div>
         <div class="in">Manufacturing &amp; Supply Chain</div>
+      </div>
+      <div class="ic">
+        <div class="ii"><svg viewBox="0 0 24 24"><path d="M6 8h12l-1.2 12.5a1 1 0 01-1 .9H8.2a1 1 0 01-1-.9L6 8z"/><path d="M9 8V6a3 3 0 016 0v2"/></svg></div>
+        <div class="in">Retail &amp; CPG</div>
+      </div>
+      <div class="ic">
+        <div class="ii"><svg viewBox="0 0 24 24"><circle cx="12" cy="4.6" r="1.4"/><path d="M12 6v1.3"/><path d="M12 7.3L4.3 15c-.6.6-.2 1.7.7 1.7h14c.9 0 1.3-1.1.7-1.7L12 7.3z"/><line x1="4.5" y1="16.7" x2="19.5" y2="16.7"/></svg></div>
+        <div class="in">Fashion &amp; Beauty</div>
       </div>
     </div>
   </div>
@@ -400,9 +420,44 @@ footer{background:var(--navy);padding:44px 64px;display:flex;align-items:center;
     <rect width="1200" height="500" fill="url(#circuit)"/>
   </svg>
   <div class="trust-in">
-    <div class="trust-badge">Built For High-Stakes AI</div>
-    <p class="trust-q">"When AI touches <span>patient care</span> or <span>financial data</span>, governance isn't a checkbox after the build — it's the foundation the build stands on."</p>
+    <div class="trust-badge">Not Your Average AI Vendor</div>
+    <p class="trust-q">"If your AI touches a <span>patient chart</span> or a <span>bank account</span>, 'we'll patch it later' isn't a plan. It's a headline waiting to happen."</p>
     <p class="trust-a"><b>Founder &amp; Principal</b>, Asis Advisory — formerly Fortune 50 AI &amp; Governance Executive</p>
+  </div>
+</section>
+
+<!-- FRAMEWORK -->
+<section class="fw-s" id="framework">
+  <div class="si">
+    <div class="se">The Framework</div>
+    <h2 class="st">Move fast. Govern faster.</h2>
+    <p class="ss">Four pillars that let you innovate without losing sleep — because "responsible" and "creative" were never supposed to be opposites. Industry-agnostic, battle-tested, yours to steal.</p>
+    <div class="fw-g">
+      <div class="pil">
+        <div class="pil-ico"><svg viewBox="0 0 24 24"><rect x="6" y="4" width="12" height="17" rx="2"/><path d="M9 4V3a1 1 0 011-1h4a1 1 0 011 1v1"/><path d="M9 11l2 2 4-4"/></svg></div>
+        <div class="pil-n">Govern</div>
+        <div class="pil-t">Guardrails, not gates</div>
+        <p class="pil-d">Clear policy, defined decision rights, and accountability from day one — so your team can move fast without setting off alarms in legal.</p>
+      </div>
+      <div class="pil">
+        <div class="pil-ico"><svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 018 0v4"/></svg></div>
+        <div class="pil-n">Secure</div>
+        <div class="pil-t">Trust, engineered in</div>
+        <p class="pil-d">Data protection, access control, and model risk management built into the foundation — not bolted on after something breaks.</p>
+      </div>
+      <div class="pil">
+        <div class="pil-ico"><svg viewBox="0 0 24 24"><path d="M4 15a8 8 0 1116 0"/><path d="M12 15l4-5"/><circle cx="12" cy="15" r="1.3"/></svg></div>
+        <div class="pil-n">Measure</div>
+        <div class="pil-t">If you can't see it, you can't trust it</div>
+        <p class="pil-d">Real-time visibility into performance, bias, and drift — numbers your board believes, not vibes your team hopes are true.</p>
+      </div>
+      <div class="pil">
+        <div class="pil-ico"><svg viewBox="0 0 24 24"><path d="M9 4H4v5"/><path d="M15 4h5v5"/><path d="M9 20H4v-5"/><path d="M15 20h5v-5"/></svg></div>
+        <div class="pil-n">Scale</div>
+        <div class="pil-t">From pilot to platform</div>
+        <p class="pil-d">The org, infrastructure, and muscle memory to take AI from one team's experiment to everyone's advantage — without the wheels coming off.</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -411,31 +466,31 @@ footer{background:var(--navy);padding:44px 64px;display:flex;align-items:center;
   <div class="si">
     <div class="se">Our Process</div>
     <h2 class="st">From kickoff to scaled AI in 90 days.</h2>
-    <p class="ss" style="margin-bottom:64px">A playbook we've run at scale. No 18-month timelines, no discovery theater. We get right to work — and we ship.</p>
+    <p class="ss" style="margin-bottom:64px">A playbook we've run before. No 18-month timelines, no discovery theater. Just work — and things that ship.</p>
     <div class="phases">
       <div class="ph">
         <div class="phd">1</div>
         <div class="phu">Weeks 1–2</div>
         <div class="pht">Diagnose</div>
-        <p class="php">AI readiness audit, use-case mapping, regulatory exposure assessment, and stakeholder alignment. You'll have a clear picture of where you stand before we spend a dollar on build.</p>
+        <p class="php">Readiness audit, use-case map, regulatory gut-check, stakeholder buy-in. You'll know exactly where you stand before we touch a line of code.</p>
       </div>
       <div class="ph">
         <div class="phd">2</div>
         <div class="phu">Weeks 3–4</div>
         <div class="pht">Design</div>
-        <p class="php">Governance architecture, technical blueprint, org model, and a prioritized roadmap with ROI models. Everything ready for a board conversation or a budget ask.</p>
+        <p class="php">Governance architecture, technical blueprint, org model, and ROI math that holds up in a board meeting. Bring it to your CFO — we dare you.</p>
       </div>
       <div class="ph">
         <div class="phd">3</div>
         <div class="phu">Weeks 5–12</div>
         <div class="pht">Build &amp; Deploy</div>
-        <p class="php">Engineering squads ship your first AI use case. Governance runs in parallel. Metrics tracked from day one. Real software in production, not a proof-of-concept deck.</p>
+        <p class="php">Your first AI use case, shipped. Governance running alongside it, not bolted on after. Real software in production — not a slide that says "proof of concept."</p>
       </div>
       <div class="ph">
         <div class="phd">4</div>
         <div class="phu">Ongoing</div>
         <div class="pht">Scale &amp; Govern</div>
-        <p class="php">CoE stood up, team trained, governance operating, FinOps in place. You own it. We stay on as a fractional partner or step back entirely — your call.</p>
+        <p class="php">CoE stood up. Team trained. Governance humming. You own it outright — we stick around if you want us, or vanish like we were never here.</p>
       </div>
     </div>
   </div>
@@ -448,8 +503,8 @@ footer{background:var(--navy);padding:44px 64px;display:flex;align-items:center;
       <div>
         <div class="se">Why Asis</div>
         <h2 class="st">Built by someone who's done it from the inside.</h2>
-        <p style="font-size:16px;color:var(--slate);line-height:1.72;margin-bottom:20px">Asis Advisory was founded by a former Fortune 50 AI executive who built an enterprise AI Center of Excellence from scratch — deploying governance frameworks, engineering infrastructure, and change management programs across 140,000+ employees in a regulated healthcare environment.</p>
-        <p style="font-size:16px;color:var(--slate);line-height:1.72;margin-bottom:20px">We know what it feels like to sit in the chair our clients sit in — navigating board rooms, compliance reviews, union sensitivities, and "not yet" conversations. That's what makes us different from any consulting firm that has only ever advised from the outside.</p>
+        <p style="font-size:16px;color:var(--slate);line-height:1.72;margin-bottom:20px">Asis Advisory was founded by a former Fortune 50 AI executive who built an enterprise AI Center of Excellence from scratch — governance frameworks, engineering infrastructure, and change management, rolled out across 140,000+ employees in regulated healthcare. Not theoretical. Lived it.</p>
+        <p style="font-size:16px;color:var(--slate);line-height:1.72;margin-bottom:20px">We've sat in the chair you're sitting in — board rooms, compliance reviews, union sensitivities, the endless "not yet" conversations. That's the difference between us and a consulting firm that's only ever advised from the outside looking in.</p>
         <p style="font-size:16px;color:var(--slate);line-height:1.72;margin-bottom:32px">When we say we've done this at scale, we mean it.</p>
         <p style="font-size:14px;color:var(--slate2);display:flex;align-items:center;gap:6px"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><path d="M12 21s7-7.8 7-12.5a7 7 0 10-14 0C5 13.2 12 21 12 21z"/><circle cx="12" cy="8.5" r="2.4"/></svg> Chicago, IL &nbsp;·&nbsp; Women-Led &nbsp;·&nbsp; T200 Member &nbsp;·&nbsp; WLA</p>
       </div>
@@ -471,8 +526,8 @@ footer{background:var(--navy);padding:44px 64px;display:flex;align-items:center;
     <div class="cg">
       <div class="ci">
         <div class="se">Get In Touch</div>
-        <h3>Ready to govern, build, and scale your AI?</h3>
-        <p>Tell us what you're working on. We'll respond within 24 hours with a clear point of view — no sales theater, no NDAs required to have a conversation.</p>
+        <h3>Ready to stop talking about AI and start shipping it?</h3>
+        <p>Tell us what you're wrestling with. We'll get back to you in 24 hours with an actual opinion — no sales theater, no NDA required just to talk.</p>
         <div class="cdet">
           <a href="mailto:hello@asisadvisory.com" class="citem">
             <div class="cico">✉</div>
@@ -530,7 +585,7 @@ footer{background:var(--navy);padding:44px 64px;display:flex;align-items:center;
               <input type="email" id="fe" placeholder="you@company.com">
             </div>
           </div>
-          <button class="fsbtn" onclick="handleSend()">Send Message →</button>
+          <button class="fsbtn" onclick="handleSend()">Send It →</button>
           <p class="fsnote">We respond within 24 hours. No spam, ever.</p>
         </div>
         <div class="fssuc" id="cfSuc">
@@ -549,6 +604,7 @@ footer{background:var(--navy);padding:44px 64px;display:flex;align-items:center;
   <div class="flinks">
     <a href="#services">Services</a>
     <a href="#industries">Industries</a>
+    <a href="#framework">Framework</a>
     <a href="#how">How We Work</a>
     <a href="#about">About</a>
     <a href="#contact">Contact</a>

@@ -196,6 +196,21 @@ section{padding:96px 64px}
 .fssuc p{font-size:15px;color:var(--slate);line-height:1.6}
 .fssuc a{color:var(--ember);font-weight:600;text-decoration:none}
 
+/* NEWSLETTER */
+.nl-s{background:var(--navy);position:relative;overflow:hidden;padding:96px 64px;text-align:center}
+.nl-s::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,.05) 1px,transparent 1px);background-size:30px 30px;pointer-events:none}
+.nl-s::after{content:'';position:absolute;top:-160px;left:50%;transform:translateX(-50%);width:560px;height:560px;background:radial-gradient(circle,rgba(200,96,42,.14) 0%,transparent 65%);pointer-events:none}
+.nl-in{max-width:640px;margin:0 auto;position:relative;z-index:1}
+.nl-eyebrow{font-family:var(--bd);font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--ember);margin-bottom:18px}
+.nl-h{font-family:var(--gd);font-size:clamp(26px,3.2vw,38px);font-weight:700;color:#fff;letter-spacing:-.6px;line-height:1.15;margin-bottom:16px}
+.nl-p{font-size:16px;color:rgba(255,255,255,.55);line-height:1.65;max-width:520px;margin:0 auto 36px}
+.nl-tags{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-bottom:36px}
+.nl-tag{font-size:11px;font-weight:600;letter-spacing:.5px;color:rgba(255,255,255,.55);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);padding:6px 12px;border-radius:999px}
+.nl-embed{display:flex;justify-content:center}
+.nl-embed iframe{border-radius:8px;max-width:100%;box-shadow:0 20px 50px -18px rgba(0,0,0,.5)}
+.nl-note{font-size:12px;color:rgba(255,255,255,.32);margin-top:16px}
+@media(max-width:960px){.nl-s{padding:72px 28px}}
+
 /* FOOTER */
 footer{background:var(--navy);padding:44px 64px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px}
 .fl{font-family:var(--gd);font-size:17px;font-weight:700;color:#fff}
@@ -595,6 +610,26 @@ footer{background:var(--navy);padding:44px 64px;display:flex;align-items:center;
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="nl-s" id="newsletter">
+  <div class="nl-in">
+    <div class="nl-eyebrow">Regulated Intelligence &nbsp;·&nbsp; Weekly</div>
+    <h2 class="nl-h">The AI briefing regulated industries actually need.</h2>
+    <p class="nl-p">Governance moves, frontier model drops, real enterprise wins, one thing worth learning, and the conferences worth the flight budget — every Friday, free.</p>
+    <div class="nl-tags">
+      <span class="nl-tag">Governance &amp; Policy</span>
+      <span class="nl-tag">Frontier Models</span>
+      <span class="nl-tag">Enterprise Wins</span>
+      <span class="nl-tag">Learn One Thing</span>
+      <span class="nl-tag">Conferences</span>
+    </div>
+    <div class="nl-embed">
+      <iframe src="https://regulatedintelligence.substack.com/embed" width="480" height="150" style="border:1px solid #EEE; background:white;" frameborder="0" scrolling="no"></iframe>
+    </div>
+    <p class="nl-note">No spam. Unsubscribe in one click. Read by operators, not just AI Twitter.</p>
   </div>
 </section>
 
